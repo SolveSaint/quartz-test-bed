@@ -106,16 +106,16 @@ body::before {
 }
 
 /* =========================
-   SAUCER IN TREES
+   ROAMING ANIMAL IN TREES
    Back trees are the body background image.
-   This adds the saucer layer and a front tree occluder band.
+   This adds the animal layer and a front tree occluder band.
    ========================= */
 
 html {
   position: relative;
 }
 
-/* SAUCER LAYER (middle) */
+/* ROAMING ANIMAL LAYER (middle) */
 html::before {
   content: "";
   position: fixed;
@@ -128,7 +128,7 @@ html::before {
   pointer-events: none;
   z-index: 1;
 
-  background-image: url("../static/saucer.svg");
+  background-image: url("../static/roaming-animal.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -162,10 +162,10 @@ html::before {
   transform: translate(-50%, -50%);
 
   /* patrol speed goal: 80s */
-  animation: saucerPatrol 80s ease-in-out infinite, saucerDrift 14s ease-in-out infinite;
+  animation: animalPatrol 80s ease-in-out infinite, animalDrift 14s ease-in-out infinite;
 }
 
-/* FRONT TREES OCCLUDER BAND (top layer, only around saucer height)
+/* FRONT TREES OCCLUDER BAND (top layer, only around animal height)
    Adds a faint green glow behind the front trees so it is visible even when occluded. */
 html::after {
   content: "";
@@ -176,7 +176,7 @@ html::after {
   z-index: 2;
 
   /* Layer 1: front trees
-     Layer 2: saucer glow (behind trees, shows through SVG transparency) */
+     Layer 2: animal shadow (behind trees, shows through SVG transparency) */
   background-image:
     url("../static/trees-front.svg"),
     radial-gradient(
@@ -211,7 +211,7 @@ html::after {
 
   animation:
     treetopsSway 9.5s ease-in-out infinite,
-    saucerGlow 80s ease-in-out infinite;
+    animalShadow 80s ease-in-out infinite;
 
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -234,7 +234,7 @@ html::after {
 }
 
 /* Motion */
-@keyframes saucerPatrol {
+@keyframes animalPatrol {
   0%   { transform: translate(-50%, -50%) translateX(-46vw) translateY(0); }
   18%  { transform: translate(-50%, -50%) translateX(-18vw) translateY(0); }
   32%  { transform: translate(-50%, -50%) translateX(0vw)  translateY(-18vh); }
@@ -244,8 +244,8 @@ html::after {
   100% { transform: translate(-50%, -50%) translateX(-46vw) translateY(0); }
 }
 
-/* Glow follows the same path as saucerPatrol, but as a background-position in the occluder layer */
-@keyframes saucerGlow {
+/* Glow follows the same path as animalPatrol, but as a background-position in the occluder layer */
+@keyframes animalShadow {
   0% {
     background-position:
       center bottom,
@@ -284,7 +284,7 @@ html::after {
 }
 
 /* subtle bob so it feels like it belongs in the scene */
-@keyframes saucerDrift {
+@keyframes animalDrift {
   0% {
     filter: brightness(0.62) contrast(0.92) saturate(0.45) blur(0.25px)
       drop-shadow(0 0 2px rgba(0, 0, 0, 0.55))
@@ -488,7 +488,7 @@ code {
 }
 
 /* =========================
-   FAKE H1 HERO TITLE
+   OPTIONAL HERO TITLE
    ========================= */
 .avv-title {
   white-space: nowrap;
@@ -728,7 +728,7 @@ svg[data-icon*="book"],
 
 /* =========================
    EXPLORER
-   Biolectrics blocks for files
+   Block-style rows for files
    Folder rows stay clean
    Hover and active chevron restored
    ========================= */
@@ -1328,4 +1328,50 @@ footer a[href=""] {
 .article-title {
   display: block;
   margin-top: 0;
+}
+
+
+/* =========================
+   GENERIC TEST BED HERO
+   ========================= */
+.site-hero-banner {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 1.4rem 0;
+  padding: clamp(1.2rem, 3vw, 2.2rem) 1rem;
+  border-radius: 18px;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.58), rgba(0,0,0,0.28)),
+    radial-gradient(ellipse at top, rgba(127,180,255,0.12), rgba(127,180,255,0.00) 62%);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.42),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.site-hero-kicker {
+  color: #9fb7aa;
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.site-hero-title {
+  color: #f1f5f2;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 650;
+  line-height: 1.05;
+  text-shadow: 0 3px 16px rgba(0,0,0,0.72);
+}
+
+.site-hero-subtitle {
+  max-width: 48rem;
+  margin: 0.75rem auto 0;
+  color: #c8d4cd;
+  font-size: clamp(0.95rem, 1.7vw, 1.12rem);
+  line-height: 1.45;
 }
