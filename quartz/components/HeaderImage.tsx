@@ -4,20 +4,26 @@ const HeaderImage: QuartzComponent = () => {
   return (
     <>
       <style>{`
-        /* Test-bed scoped repairs. Keep these narrow: no global h1 or Explorer row rules. */
         #quartz-root h1.article-title {
           display: inline-block !important;
           width: fit-content !important;
           max-width: calc(100% - 1rem) !important;
-          margin-top: 0.35rem !important;
-          margin-bottom: 1.15rem !important;
-          padding: 0.10em 0.34em 0.12em 1.18rem !important;
-          line-height: 1.06 !important;
+          margin-top: 0.18rem !important;
+          margin-bottom: 1.05rem !important;
+          padding: 0.06em 0.24em 0.08em 0.96rem !important;
+          line-height: 1.02 !important;
+          font-size: clamp(1.75rem, 2.35vw, 2.35rem) !important;
         }
 
         #quartz-root h1.article-title::before {
-          inset: -0.06em -0.18em !important;
-          border-radius: 10px !important;
+          inset: -0.035em -0.12em !important;
+          border-radius: 8px !important;
+        }
+
+        #quartz-root h1.article-title::after {
+          left: 0.22rem !important;
+          top: 0.26em !important;
+          font-size: 0.92em !important;
         }
 
         #quartz-root .left.sidebar .explorer .title-button,
