@@ -1,0 +1,58 @@
+name: Import AVSV Quartz Template
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/import-avsv-quartz.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout test repository
+        uses: actions/checkout@v4
+        with:
+          path: target
+
+      - name: Checkout AVSV template repository
+        uses: actions/checkout@v4
+        with:
+          repository: SolveSaint/AliensVSVeterans
+          path: source
+
+      - name: Preserve test content
+        run: |
+          mkdir -p preserved-content
+          if [ -d target/content ]; then
+            cp -a target/content/. preserved-content/
+          fi
+
+      - name: Copy Quartz without AVSV content
+        run: |
+          rsync -a source/ target/ \
+            --exclude '.git/' \
+            --exclude 'content/' \
+            --exclude '.github/' \
+            --exclude 'docs/' \
+            --exclude 'public/' \
+            --exclude 'node_modules/'
+          rm -rf target/content
+          mkdir -p target/content
+          cp -a preserved-content/. target/content/ || true
+
+      - name: Commit imported template
+        run: |
+          cd target
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Import customized Quartz template from AVSV without content"
+            git push
+          fi
