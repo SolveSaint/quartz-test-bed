@@ -5,18 +5,14 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [Component.HeaderImage()],
-  afterBody: [Component.GoatCounterSPA(), Component.Postscript()],
-footer: Component.Footer({
-  links: {
-    "Contact Us:": "",
-
-    Instagram: "https://www.instagram.com/aliensvsveterans/",
-    TikTok: "https://www.tiktok.com/@aliensvsveterans",
-    "AVSV Discord": "https://discord.gg/5zdc5RJByb",
-    "RSS" : "https://www.aliensvsveterans.com/main.rss",
-    Contact: "mailto:contact@aliensvsveterans.com",
-  },
-}),
+  afterBody: [Component.Postscript()],
+  footer: Component.Footer({
+    links: {
+      "Live Site": "https://solvesaint.github.io/quartz-test-bed/",
+      Repository: "https://github.com/SolveSaint/quartz-test-bed",
+      RSS: "https://solvesaint.github.io/quartz-test-bed/main.rss",
+    },
+  }),
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -39,26 +35,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
 
-  // this renders AFTER the markdown body
-  afterBody: [
-    // comments only appear when frontmatter has comments: true
-    Component.Comments({
-      options: {
-        repo: "solvesaint/aliensvsveterans",
-        repoId: "R_kgDOQwETTQ",
-        category: "Comments",
-        categoryId: "DIC_kwDOQwETTc4C0gy-",
-        mapping: "pathname",
-        strict: false,
-        reactionsEnabled: false,
-        emitMetadata: false,
-        inputPosition: "bottom",
-        lang: "en",
-        theme: "preferred_color_scheme",
-        loading: "lazy",
-      },
-    }),
-  ],
+  afterBody: [],
 
   left: [
     Component.PageTitle(),
