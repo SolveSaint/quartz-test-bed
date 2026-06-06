@@ -2,7 +2,7 @@
 title: Quartz Test Bed
 ---
 
-# Quartz Test Bed
+<div class="index-title-card">Quartz Test Bed</div>
 
 This page was created through the GitHub integration test.
 
