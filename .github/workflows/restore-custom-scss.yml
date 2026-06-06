@@ -1,0 +1,30 @@
+name: Restore custom SCSS
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/restore-custom-scss.yml
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore custom.scss from last good commit
+        run: git checkout 1261cad90702da1edce9d5154f0feca565b2fd03 -- quartz/styles/custom.scss
+      - name: Append narrow article-title fix only
+        run: |
+          printf '\n/* Narrow fix: article title only. Do not affect Explorer/sidebar. */\n.article-title h1 {\n  margin-top: 0.25rem !important;\n  margin-bottom: 1rem !important;\n  width: fit-content !important;\n  max-width: calc(100%% - 1rem) !important;\n}\n.article-title h1::before {\n  inset: -0.06em -0.18em !important;\n}\n' >> quartz/styles/custom.scss
+      - name: Commit restored CSS
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add quartz/styles/custom.scss .github/workflows/restore-custom-scss.yml
+          git commit -m "Restore custom SCSS and scope article title fix" || exit 0
+          git push
