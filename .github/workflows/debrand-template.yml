@@ -1,0 +1,112 @@
+name: Debrand Quartz Template
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/debrand-template.yml
+
+permissions:
+  contents: write
+
+jobs:
+  debrand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Patch AVSV-specific styling and labels
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          css = Path('quartz/styles/custom.scss')
+          s = css.read_text()
+          replacements = {
+            'saucer.svg': 'roaming-animal.svg',
+            'SAUCER IN TREES': 'ROAMING ANIMAL IN TREES',
+            'saucer layer': 'animal layer',
+            'saucer glow': 'animal shadow',
+            'SAUCER LAYER (middle)': 'ROAMING ANIMAL LAYER (middle)',
+            'saucerPatrol': 'animalPatrol',
+            'saucerDrift': 'animalDrift',
+            'saucerGlow': 'animalShadow',
+            'saucer height': 'animal height',
+            'Layer 2: saucer glow': 'Layer 2: animal shadow',
+            'Biolectrics blocks for files': 'Block-style rows for files',
+            'FAKE H1 HERO TITLE': 'OPTIONAL HERO TITLE',
+          }
+          for old, new in replacements.items():
+            s = s.replace(old, new)
+
+          s += '''
+
+          /* =========================
+             GENERIC TEST BED HERO
+             ========================= */
+          .site-hero-banner {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 0 1.4rem 0;
+            padding: clamp(1.2rem, 3vw, 2.2rem) 1rem;
+            border-radius: 18px;
+            text-align: center;
+            background:
+              linear-gradient(180deg, rgba(0,0,0,0.58), rgba(0,0,0,0.28)),
+              radial-gradient(ellipse at top, rgba(127,180,255,0.12), rgba(127,180,255,0.00) 62%);
+            border: 1px solid rgba(255,255,255,0.10);
+            box-shadow:
+              0 18px 40px rgba(0,0,0,0.42),
+              inset 0 1px 0 rgba(255,255,255,0.08);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+          }
+
+          .site-hero-kicker {
+            color: #9fb7aa;
+            font-size: 0.88rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+          }
+
+          .site-hero-title {
+            color: #f1f5f2;
+            font-size: clamp(2.25rem, 5vw, 4rem);
+            font-weight: 650;
+            line-height: 1.05;
+            text-shadow: 0 3px 16px rgba(0,0,0,0.72);
+          }
+
+          .site-hero-subtitle {
+            max-width: 48rem;
+            margin: 0.75rem auto 0;
+            color: #c8d4cd;
+            font-size: clamp(0.95rem, 1.7vw, 1.12rem);
+            line-height: 1.45;
+          }
+          '''
+          css.write_text(s)
+
+          # Remove stale CNAME if inherited from source site.
+          cname = Path('content/CNAME')
+          if cname.exists():
+            cname.unlink()
+          root_cname = Path('CNAME')
+          if root_cname.exists():
+            root_cname.unlink()
+          PY
+
+      - name: Commit debranding changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add quartz/styles/custom.scss quartz/static/roaming-animal.svg quartz.config.ts quartz.layout.ts quartz/components/HeaderImage.tsx .github/workflows/debrand-template.yml README.md || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Debrand Quartz test bed template"
+            git push
+          fi
