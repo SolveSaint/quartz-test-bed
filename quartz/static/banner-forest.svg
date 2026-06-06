@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 420'>
+<defs>
+<linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'>
+<stop offset='0%' stop-color='#0a1410'/>
+<stop offset='100%' stop-color='#16241d'/>
+</linearGradient>
+</defs>
+<rect width='1600' height='420' fill='url(#bg)'/>
+<circle cx='1250' cy='90' r='48' fill='#d7e3d8' opacity='0.85'/>
+<g fill='#0b120e'>
+<polygon points='120,360 190,120 260,360'/><polygon points='230,360 310,90 390,360'/><polygon points='360,360 450,110 540,360'/><polygon points='520,360 620,70 720,360'/><polygon points='700,360 790,120 880,360'/><polygon points='860,360 970,60 1080,360'/><polygon points='1050,360 1160,100 1270,360'/><polygon points='1240,360 1350,70 1460,360'/>
+</g>
+<g fill='#050806'>
+<rect x='0' y='320' width='1600' height='100'/>
+</g>
+<text x='800' y='180' text-anchor='middle' fill='#eef5ef' font-size='72' font-family='Segoe UI, Arial, sans-serif'>Quartz Test Bed</text>
+<text x='800' y='235' text-anchor='middle' fill='#b8c9bc' font-size='28' font-family='Segoe UI, Arial, sans-serif'>Reusable Quartz Theme • Forest Aesthetic • Block Navigation</text>
+</svg>
