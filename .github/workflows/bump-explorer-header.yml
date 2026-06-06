@@ -1,0 +1,61 @@
+name: Bump Explorer Header
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/bump-explorer-header.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Append Explorer header sizing override
+        run: |
+          cat >> quartz/styles/custom.scss <<'EOF'
+
+/* =========================
+   EXPLORER HEADER SIZE OVERRIDE
+   Scope: left sidebar Explorer control only.
+   Does not affect article titles or file rows.
+   ========================= */
+.left.sidebar .explorer,
+.left.sidebar .explorer button,
+.left.sidebar .explorer .title-button,
+.left.sidebar .explorer h1,
+.left.sidebar .explorer h2,
+.left.sidebar .explorer h3,
+.left.sidebar .explorer h4,
+.left.sidebar .explorer h5,
+.left.sidebar .explorer h6 {
+  font-size: 1.08rem !important;
+  line-height: 1.25 !important;
+}
+
+.left.sidebar .explorer .title-button,
+.left.sidebar .explorer button {
+  padding: 0.35rem 0.75rem !important;
+  min-height: 2rem !important;
+  font-weight: 650 !important;
+}
+
+.left.sidebar .explorer svg,
+.left.sidebar .explorer button svg,
+.left.sidebar .explorer .title-button svg {
+  width: 1.15rem !important;
+  height: 1.15rem !important;
+}
+EOF
+      - name: Commit Explorer header sizing override
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add quartz/styles/custom.scss .github/workflows/bump-explorer-header.yml
+          git commit -m "Increase Explorer header size" || exit 0
+          git push
