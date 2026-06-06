@@ -2,10 +2,12 @@ import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
 const HeaderImage: QuartzComponent = () => {
   return (
-    <div class="site-hero-banner" aria-label="Quartz Test Bed banner">
-      <div class="site-hero-kicker">Quartz Base Theme</div>
-      <div class="site-hero-title">Quartz Test Bed</div>
-      <div class="site-hero-subtitle">A reusable dark forest Quartz template with block navigation, striping, and chevrons.</div>
+    <div style={{ width: "100%", textAlign: "center", marginBottom: "1rem" }}>
+      <img
+        src="/static/banner-forest.svg"
+        alt="Quartz Test Bed banner"
+        style={{ maxWidth: "100%", height: "auto", borderRadius: "14px" }}
+      />
     </div>
   )
 }
