@@ -3,22 +3,17 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "AVSV",
+    pageTitle: "Quartz Test Bed",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
 
-    analytics: {
-      provider: "goatcounter",
-      websiteId: "aliensvsveterans",
-      // scriptSrc: "https://aliensvsveterans.com/count.js",
-      // host: "https://YOUR_GOATCOUNTER_HOST",
-    },
+    analytics: null,
 
     locale: "en-US",
 
-    baseUrl: "aliensvsveterans.com",
-    canonicalUrl: "https://aliensvsveterans.com",
+    baseUrl: "solvesaint.github.io/quartz-test-bed",
+    canonicalUrl: "https://solvesaint.github.io/quartz-test-bed",
 
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
@@ -72,10 +67,8 @@ const config: QuartzConfig = {
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
-
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
-
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
