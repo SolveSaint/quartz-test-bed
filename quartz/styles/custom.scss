@@ -28,6 +28,7 @@ body {
   background-attachment: fixed;
 }
 
+/* Interleaved parallax stack, front to back: front trees, near fog, mid trees, mid fog, far trees, far fog, stars. */
 body::before {
   content: "";
   position: fixed;
@@ -36,33 +37,50 @@ body::before {
   pointer-events: none;
   background-image:
     url("./static/trees-row-front.svg"),
+    radial-gradient(ellipse at 28% 66%, rgba(132,118,168,0.14), transparent 26rem),
+    radial-gradient(ellipse at 78% 70%, rgba(160,150,190,0.10), transparent 24rem),
     url("./static/trees-row-mid.svg"),
+    radial-gradient(ellipse at 22% 58%, rgba(110,155,130,0.13), transparent 30rem),
+    radial-gradient(ellipse at 70% 60%, rgba(118,170,140,0.11), transparent 32rem),
     url("./static/trees-row-far.svg"),
+    radial-gradient(ellipse at 48% 46%, rgba(170,198,218,0.12), transparent 42rem),
+    linear-gradient(to right, transparent 0%, rgba(170,198,218,0.07) 24%, transparent 48%, rgba(170,198,218,0.055) 74%, transparent 100%),
     url("./static/stars-twinkle.svg");
-  background-repeat: repeat-x, repeat-x, repeat-x, repeat;
-  background-size: 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px;
-  background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
-  animation: qtbUnifiedBackground 240s linear infinite;
+  background-repeat: repeat-x, no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, repeat;
+  background-size:
+    1600px 760px,
+    900px 260px,
+    780px 220px,
+    1800px 700px,
+    950px 250px,
+    1100px 280px,
+    1900px 560px,
+    1400px 360px,
+    100% 18%,
+    1400px 900px;
+  background-position:
+    0 calc(100% + 24vh),
+    8vw 66vh,
+    70vw 70vh,
+    0 calc(100% + 2vh),
+    -8vw 58vh,
+    62vw 60vh,
+    0 100%,
+    20vw 46vh,
+    0 54vh,
+    0 0;
+  filter: blur(0.2px);
+  animation: qtbLayeredParallax 240s linear infinite;
 }
 
+/* Reserved for future foreground effects; empty so fog does not flatten the scene. */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image:
-    linear-gradient(to top, rgba(3,7,6,0.55), transparent 32%),
-    radial-gradient(ellipse at 22% 58%, rgba(205,225,215,0.18), transparent 30rem),
-    radial-gradient(ellipse at 72% 56%, rgba(205,225,215,0.16), transparent 32rem),
-    radial-gradient(ellipse at 45% 70%, rgba(230,240,235,0.12), transparent 40rem),
-    linear-gradient(to right, transparent 0%, rgba(210,230,220,0.10) 24%, transparent 48%, rgba(210,230,220,0.08) 74%, transparent 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%, 900px 260px, 1000px 280px, 1300px 320px, 100% 18%;
-  background-position: center, -6vw 58vh, 62vw 56vh, 18vw 70vh, 0 64vh;
-  filter: blur(5px);
-  opacity: 1;
-  animation: qtbFogDrift 84s ease-in-out infinite alternate;
+  background: linear-gradient(to top, rgba(2,4,3,0.36), transparent 24%);
 }
 
 #quartz-root,
@@ -317,15 +335,37 @@ a {
   padding-top: 0 !important;
 }
 
-@keyframes qtbUnifiedBackground {
-  from { background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0; }
-  to { background-position: -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%, -140px 0; }
-}
-
-@keyframes qtbFogDrift {
-  from { background-position: center, -6vw 58vh, 62vw 56vh, 18vw 70vh, 0 64vh; opacity: 0.82; }
-  50% { opacity: 1; }
-  to { background-position: center, 16vw 56vh, 44vw 58vh, 36vw 68vh, -12vw 62vh; opacity: 0.9; }
+@keyframes qtbLayeredParallax {
+  0% {
+    opacity: 0.82;
+    background-position:
+      0 calc(100% + 24vh),
+      8vw 66vh,
+      70vw 70vh,
+      0 calc(100% + 2vh),
+      -8vw 58vh,
+      62vw 60vh,
+      0 100%,
+      20vw 46vh,
+      0 54vh,
+      0 0;
+  }
+  38% { opacity: 1; }
+  65% { opacity: 0.78; }
+  100% {
+    opacity: 0.88;
+    background-position:
+      -1600px calc(100% + 24vh),
+      58vw 65vh,
+      35vw 72vh,
+      -900px calc(100% + 2vh),
+      26vw 57vh,
+      38vw 61vh,
+      -350px 100%,
+      4vw 47vh,
+      -8vw 54vh,
+      -140px 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
