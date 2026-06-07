@@ -1,3 +1,11 @@
+body {
+  background-image:
+    radial-gradient(ellipse at 18% 58%, rgba(27,118,82,0.14), transparent 34rem),
+    radial-gradient(ellipse at 86% 60%, rgba(39,112,84,0.12), transparent 36rem),
+    radial-gradient(ellipse at center, rgba(255,255,255,0.03), rgba(0,0,0,0.68) 88%),
+    linear-gradient(to bottom, #0b0e0d 0%, #050807 100%) !important;
+}
+
 body::before {
   background-image:
     url("/quartz-test-bed/static/trees-row-front.svg"),
