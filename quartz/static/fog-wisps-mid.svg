@@ -1,27 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 320" preserveAspectRatio="none">
   <defs>
-    <filter id="soft" x="-20%" y="-45%" width="140%" height="190%">
-      <feGaussianBlur stdDeviation="16"/>
+    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
     </filter>
-    <linearGradient id="midMist" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#8fc9dd" stop-opacity="0"/>
-      <stop offset="0.16" stop-color="#9adfbd" stop-opacity="0.24"/>
-      <stop offset="0.33" stop-color="#b7dce6" stop-opacity="0.26"/>
-      <stop offset="0.53" stop-color="#a987dc" stop-opacity="0.14"/>
-      <stop offset="0.72" stop-color="#94e9b8" stop-opacity="0.20"/>
-      <stop offset="1" stop-color="#8fc9dd" stop-opacity="0"/>
-    </linearGradient>
   </defs>
   <rect width="1800" height="320" fill="none"/>
-  <g filter="url(#soft)">
-    <path d="M-120 252 C32 218 118 244 270 216 C422 188 548 216 704 190 C866 164 1018 214 1188 184 C1364 154 1502 198 1664 174 C1762 160 1830 172 1920 150 L1920 350 L-120 350 Z" fill="url(#midMist)" opacity="0.74"/>
-    <path d="M-80 206 C130 176 306 196 512 162 C724 126 914 182 1116 152 C1324 120 1512 158 1696 136 C1772 126 1840 130 1900 118" fill="none" stroke="#cceaf0" stroke-opacity="0.13" stroke-width="54" stroke-linecap="round"/>
-    <ellipse cx="270" cy="238" rx="330" ry="62" fill="#98eabd" opacity="0.13"/>
-    <ellipse cx="760" cy="218" rx="390" ry="76" fill="#b8dce8" opacity="0.15"/>
-    <ellipse cx="1250" cy="214" rx="310" ry="70" fill="#b493ec" opacity="0.12"/>
-    <ellipse cx="1620" cy="198" rx="260" ry="62" fill="#9bebbd" opacity="0.12"/>
+  <g filter="url(#soft)" opacity="0.66">
+    <ellipse cx="160" cy="236" rx="280" ry="54" fill="#9ce9bd" opacity="0.14"/>
+    <ellipse cx="430" cy="190" rx="330" ry="62" fill="#b9dfe9" opacity="0.17"/>
+    <ellipse cx="760" cy="244" rx="360" ry="64" fill="#a6eac4" opacity="0.12"/>
+    <ellipse cx="1080" cy="184" rx="340" ry="60" fill="#b294e7" opacity="0.11"/>
+    <ellipse cx="1410" cy="232" rx="380" ry="66" fill="#bddfe8" opacity="0.15"/>
+    <ellipse cx="1710" cy="176" rx="240" ry="52" fill="#9beabd" opacity="0.10"/>
   </g>
-  <g filter="url(#soft)" opacity="0.48">
-    <path d="M-100 292 C100 248 244 282 430 244 C616 206 786 260 960 232 C1138 204 1292 246 1468 218 C1626 192 1748 218 1900 198 L1900 340 L-100 340 Z" fill="#b7dce8" opacity="0.22"/>
+  <g filter="url(#soft)" opacity="0.54">
+    <path d="M-110 266 C80 218 238 246 420 202 C616 154 770 228 960 182 C1156 136 1320 204 1520 164 C1660 136 1760 150 1910 118" fill="none" stroke="#d1e9ee" stroke-opacity="0.13" stroke-width="54" stroke-linecap="round"/>
+    <path d="M-80 300 C100 264 260 294 450 254 C650 214 820 280 1030 242 C1238 204 1404 260 1590 224 C1728 198 1812 208 1900 188" fill="none" stroke="#b7dbe4" stroke-opacity="0.08" stroke-width="68" stroke-linecap="round"/>
   </g>
 </svg>
