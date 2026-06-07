@@ -237,10 +237,14 @@ footer {
 article,
 footer {
   position: relative;
-  z-index: 10;
+  z-index: auto !important;
 }
 
-.center article > :not(.qtb-firefly-layer) {
+.left > *,
+.right > *,
+.center > :not(article),
+.center article > :not(.qtb-firefly-layer),
+footer > * {
   position: relative;
   z-index: 12;
 }
