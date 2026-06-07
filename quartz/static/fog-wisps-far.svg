@@ -1,24 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 300" preserveAspectRatio="none">
   <defs>
-    <filter id="soft" x="-20%" y="-45%" width="140%" height="190%">
-      <feGaussianBlur stdDeviation="20"/>
+    <filter id="soft" x="-20%" y="-55%" width="140%" height="210%">
+      <feGaussianBlur stdDeviation="22"/>
     </filter>
-    <linearGradient id="farMist" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#8bbfe2" stop-opacity="0"/>
-      <stop offset="0.18" stop-color="#9fc8e9" stop-opacity="0.18"/>
-      <stop offset="0.36" stop-color="#94d6c2" stop-opacity="0.13"/>
-      <stop offset="0.58" stop-color="#b7a0ef" stop-opacity="0.10"/>
-      <stop offset="0.78" stop-color="#9fc8e9" stop-opacity="0.16"/>
-      <stop offset="1" stop-color="#8bbfe2" stop-opacity="0"/>
-    </linearGradient>
   </defs>
   <rect width="2200" height="300" fill="none"/>
-  <g filter="url(#soft)">
-    <path d="M-160 226 C58 188 220 218 426 182 C646 144 834 190 1052 160 C1278 126 1482 176 1694 148 C1904 120 2062 148 2360 110 L2360 330 L-160 330 Z" fill="url(#farMist)" opacity="0.66"/>
-    <path d="M-110 182 C104 154 280 174 502 140 C728 106 928 150 1144 124 C1386 94 1584 136 1806 112 C2000 92 2180 102 2350 82" fill="none" stroke="#c5dfef" stroke-opacity="0.10" stroke-width="58" stroke-linecap="round"/>
-    <ellipse cx="420" cy="204" rx="410" ry="68" fill="#a4ccea" opacity="0.12"/>
-    <ellipse cx="1020" cy="184" rx="480" ry="76" fill="#9ee5bf" opacity="0.08"/>
-    <ellipse cx="1620" cy="174" rx="520" ry="74" fill="#b69eed" opacity="0.08"/>
-    <ellipse cx="2040" cy="164" rx="360" ry="62" fill="#a7d0ec" opacity="0.11"/>
+  <g filter="url(#soft)" opacity="0.56">
+    <ellipse cx="220" cy="204" rx="330" ry="48" fill="#a6ccea" opacity="0.12"/>
+    <ellipse cx="570" cy="158" rx="420" ry="58" fill="#9edfc1" opacity="0.08"/>
+    <ellipse cx="980" cy="222" rx="460" ry="54" fill="#bbd9ea" opacity="0.11"/>
+    <ellipse cx="1390" cy="142" rx="430" ry="54" fill="#b79ded" opacity="0.07"/>
+    <ellipse cx="1780" cy="196" rx="500" ry="58" fill="#a7d0ec" opacity="0.10"/>
+    <ellipse cx="2180" cy="132" rx="260" ry="44" fill="#9edfc1" opacity="0.07"/>
+  </g>
+  <g filter="url(#soft)" opacity="0.46">
+    <path d="M-150 238 C90 194 260 226 500 178 C740 130 930 202 1160 154 C1400 104 1600 170 1840 128 C2040 94 2190 112 2370 86" fill="none" stroke="#c7dfec" stroke-opacity="0.09" stroke-width="56" stroke-linecap="round"/>
   </g>
 </svg>
