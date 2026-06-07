@@ -35,10 +35,22 @@
   z-index: 250 !important;
 }
 
+.sidebar.left:has(.explorer),
+.left.sidebar:has(.explorer),
+.left:has(.explorer) {
+  isolation: isolate;
+}
+
 .explorer {
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
+  padding: 0.55rem 0.7rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  background: rgba(2, 5, 4, 0.86);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(3px);
 
   min-height: 1.2rem;
   flex: 0 1 auto;
