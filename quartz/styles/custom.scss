@@ -54,23 +54,33 @@ body::after {
   background-repeat: repeat-x;
   background-size: 2200px 520px;
   background-position: 0 bottom;
-  opacity: 0.34;
+  opacity: 1;
   animation: qtbFarTreesScroll 340s linear infinite;
 }
 
 html::before {
-  left: 50%;
-  top: 58%;
-  width: clamp(220px, 22vw, 440px);
-  height: clamp(52px, 6vw, 100px);
+  left: 14vw;
+  top: 54vh;
+  right: auto;
+  bottom: auto;
+  width: 10px;
+  height: 10px;
   z-index: 2;
-  background-image: url("./static/roaming-animal.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  opacity: 0.72;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 248, 190, 1) 0%,
+    rgba(255, 235, 135, 0.98) 28%,
+    rgba(255, 225, 110, 0.35) 52%,
+    rgba(255, 225, 110, 0.08) 68%,
+    transparent 76%
+  );
+  box-shadow:
+    0 0 0 rgba(255, 235, 140, 0),
+    0 0 0 rgba(255, 235, 140, 0);
+  opacity: 0.14;
   transform: translate(-50%, -50%);
-  animation: qtbAnimalPatrol 80s ease-in-out infinite;
+  animation: qtbFireflyBloom 12s ease-in-out infinite;
 }
 
 html::after {
@@ -79,7 +89,7 @@ html::after {
   background-repeat: repeat-x;
   background-size: 1600px 620px;
   background-position: 0 bottom;
-  opacity: 0.50;
+  opacity: 1;
   animation: qtbNearTreesScroll 105s linear infinite;
 }
 
@@ -343,11 +353,41 @@ body .right.sidebar {
   to { background-position: -1600px bottom; }
 }
 
-@keyframes qtbAnimalPatrol {
-  0% { transform: translate(-50%, -50%) translateX(-42vw); }
-  45% { transform: translate(-50%, -50%) translateX(0) translateY(-8vh); }
-  72% { transform: translate(-50%, -50%) translateX(42vw); }
-  100% { transform: translate(-50%, -50%) translateX(-42vw); }
+@keyframes qtbFireflyBloom {
+  0%, 18%, 42%, 100% {
+    opacity: 0.08;
+    box-shadow:
+      0 0 0 rgba(255, 235, 140, 0),
+      0 0 0 rgba(255, 235, 140, 0);
+  }
+
+  22% {
+    opacity: 0.95;
+    box-shadow:
+      0 0 10px rgba(255, 235, 140, 0.85),
+      0 0 26px rgba(255, 235, 140, 0.55);
+  }
+
+  24% {
+    opacity: 0.28;
+    box-shadow:
+      0 0 4px rgba(255, 235, 140, 0.35),
+      0 0 10px rgba(255, 235, 140, 0.2);
+  }
+
+  58% {
+    opacity: 0.82;
+    box-shadow:
+      0 0 8px rgba(255, 235, 140, 0.75),
+      0 0 20px rgba(255, 235, 140, 0.45);
+  }
+
+  60% {
+    opacity: 0.18;
+    box-shadow:
+      0 0 2px rgba(255, 235, 140, 0.18),
+      0 0 6px rgba(255, 235, 140, 0.12);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -356,5 +396,10 @@ body .right.sidebar {
   html::before,
   html::after {
     animation: none !important;
+  }
+
+  html::before {
+    opacity: 0.18;
+    box-shadow: none;
   }
 }
