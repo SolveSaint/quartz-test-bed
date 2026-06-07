@@ -1,3 +1,240 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+/* Quartz Test Bed custom visual layer for Quartz 5.
+   This keeps the site on Quartz 5 and ports the forest/block aesthetic onto the new layout. */
+
+:root {
+  --qtb-bg: #050807;
+  --qtb-panel: rgba(4, 8, 6, 0.82);
+  --qtb-panel-border: rgba(208, 174, 87, 0.20);
+  --qtb-text: #e8eee9;
+  --qtb-muted: #9aa89f;
+  --qtb-gold-a: #fff9dd;
+  --qtb-gold-b: #f0d37a;
+  --qtb-gold-c: #b8953a;
+  --qtb-blue: #6ca8ff;
+}
+
+html,
+body {
+  background-color: var(--qtb-bg) !important;
+}
+
+body {
+  color: var(--qtb-text);
+  background-image:
+    url("../static/trees-back.svg"),
+    radial-gradient(ellipse at 18% 58%, rgba(27, 118, 82, 0.18), transparent 22rem),
+    radial-gradient(ellipse at 86% 60%, rgba(39, 112, 84, 0.16), transparent 24rem),
+    radial-gradient(ellipse at center, rgba(255,255,255,0.045), rgba(0,0,0,0.72) 78%),
+    linear-gradient(to bottom, #151617 0%, #07100c 42%, #020403 100%);
+  background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center bottom, left center, right center, center, center;
+  background-size: 1800px 1100px, auto, auto, cover, cover;
+  background-attachment: fixed, fixed, fixed, fixed, fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("../static/stars-twinkle.svg");
+  background-repeat: repeat;
+  background-size: 1400px 900px;
+  opacity: 0.42;
+  animation: qtbStarPulse 5.5s ease-in-out infinite;
+  mask-image: linear-gradient(to bottom, black 0%, black 46%, transparent 74%);
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  left: 50%;
+  top: 58%;
+  width: clamp(220px, 22vw, 440px);
+  height: clamp(52px, 6vw, 100px);
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("../static/roaming-animal.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.72;
+  filter: brightness(0.72) contrast(0.95) blur(0.2px) drop-shadow(0 0 8px rgba(43, 155, 104, 0.12));
+  transform: translate(-50%, -50%);
+  animation: qtbAnimalPatrol 80s ease-in-out infinite;
+}
+
+#quartz-root,
+#quartz-body,
+.center,
+.left,
+.right,
+article,
+footer {
+  position: relative;
+  z-index: 3;
+}
+
+/* Site title and side controls */
+.page-title,
+.left.sidebar .page-title,
+.left .page-title {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 0.8rem;
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 0 28px rgba(0,0,0,0.48), inset 0 0 20px rgba(50, 115, 80, 0.05);
+  font-weight: 800;
+}
+
+.page-title a,
+.page-title {
+  color: transparent !important;
+  background-image: linear-gradient(90deg, #e75563 0%, #f4f4f4 45%, #356bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.search,
+.search > .search-button,
+button.search-button,
+.explorer,
+.graph {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+.explorer button,
+.graph > h3,
+button[aria-label*="Explorer"],
+button[aria-label*="explorer"] {
+  color: #d6bd6d !important;
+  text-shadow: 0 2px 6px #000;
+  font-weight: 800;
+}
+
+/* Article hero/banner */
+.qtb-hero {
+  position: relative;
+  min-height: clamp(145px, 18vw, 230px);
+  margin: 0 0 1.25rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 25%, #c7d1ca 0 2.2rem, transparent 2.25rem),
+    linear-gradient(to bottom, rgba(16, 40, 30, 0.92), rgba(8, 22, 16, 0.86));
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.45);
+}
+
+.qtb-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 24%;
+  background-image: url("../static/trees-back.svg");
+  background-size: 1100px 420px;
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  opacity: 0.72;
+}
+
+.qtb-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24%;
+  background: #010403;
+}
+
+.qtb-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  min-height: clamp(145px, 18vw, 230px);
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.qtb-hero-title {
+  font-size: clamp(2rem, 4.1vw, 3.25rem);
+  line-height: 1;
+  font-weight: 800;
+  color: #f4f7f4;
+  text-shadow: 0 3px 16px rgba(0,0,0,0.65);
+}
+
+.qtb-hero-subtitle {
+  margin-top: 0.75rem;
+  color: #c6d2c9;
+  font-size: clamp(0.95rem, 1.4vw, 1.18rem);
+}
+
+.qtb-block-title {
+  display: inline-block;
+  width: fit-content;
+  margin: 0.25rem 0 1.05rem 0;
+  padding: 0.18rem 0.75rem;
+  border: 1px solid #303832;
+  border-radius: 8px;
+  background: #050807;
+  box-shadow: 0 10px 26px #000;
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.gold-text {
+  color: transparent;
+  background-image: linear-gradient(180deg,#fff9dd 0%,#ffefb8 18%,#f0d37a 40%,#fff3c8 52%,#e2c36a 70%,#b8953a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+article p,
+article li {
+  color: #e8eee9;
+}
+
+article hr {
+  border-color: rgba(255,255,255,0.18);
+}
+
+footer {
+  color: var(--qtb-muted);
+}
+
+footer a,
+a {
+  color: var(--qtb-blue);
+}
+
+@keyframes qtbStarPulse {
+  0%, 100% { opacity: 0.34; }
+  45% { opacity: 0.52; }
+}
+
+@keyframes qtbAnimalPatrol {
+  0% { transform: translate(-50%, -50%) translateX(-42vw); }
+  45% { transform: translate(-50%, -50%) translateX(0) translateY(-8vh); }
+  72% { transform: translate(-50%, -50%) translateX(42vw); }
+  100% { transform: translate(-50%, -50%) translateX(-42vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  html::before {
+    animation: none !important;
+  }
+}
