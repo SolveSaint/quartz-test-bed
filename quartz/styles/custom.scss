@@ -28,12 +28,17 @@ body {
   background-attachment: fixed;
 }
 
-body::before {
+body::before,
+body::after,
+#quartz-root::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 0;
   pointer-events: none;
+}
+
+body::before {
+  z-index: 0;
   background-image: url("./static/stars-twinkle.svg");
   background-repeat: repeat;
   background-size: 1400px 900px;
@@ -42,85 +47,34 @@ body::before {
   mask-image: linear-gradient(to bottom, black 0%, black 46%, transparent 74%);
 }
 
-.qtb-bg-layers { display: none !important; }
-
-.qtb-forest-layers {
-  position: fixed !important;
-  inset: 0;
-  z-index: 1 !important;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.qtb-forest {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-repeat: repeat-x;
-  background-position: 0 bottom;
-  will-change: background-position;
-}
-
-.qtb-forest-far {
+body::after {
   z-index: 1;
-  bottom: 0;
-  height: 100vh;
-  background-image: url("./static/trees-row-far.svg");
-  background-size: 1900px 560px;
-  animation: qtbForestFarScroll 420s linear infinite;
+  background-image:
+    url("./static/trees-row-front.svg"),
+    url("./static/trees-row-mid.svg"),
+    url("./static/trees-row-far.svg");
+  background-repeat: repeat-x, repeat-x, repeat-x;
+  background-size: 1600px 760px, 1800px 700px, 1900px 560px;
+  background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%;
+  animation: qtbForestParallax 180s linear infinite;
 }
 
-.qtb-forest-mid {
+#quartz-root::before {
   z-index: 2;
-  bottom: -2vh;
-  height: 100vh;
-  background-image: url("./static/trees-row-mid.svg");
-  background-size: 1800px 700px;
-  animation: qtbForestMidScroll 260s linear infinite;
+  background-image:
+    radial-gradient(circle, rgba(255,252,205,0.95) 0 2px, rgba(255,232,118,0.32) 3px, transparent 7px),
+    radial-gradient(circle, rgba(255,252,205,0.85) 0 2px, rgba(255,232,118,0.28) 3px, transparent 7px),
+    radial-gradient(circle, rgba(255,252,205,0.9) 0 2px, rgba(255,232,118,0.3) 3px, transparent 7px),
+    radial-gradient(circle, rgba(255,252,205,0.7) 0 2px, rgba(255,232,118,0.22) 3px, transparent 7px),
+    radial-gradient(circle, rgba(255,252,205,0.85) 0 2px, rgba(255,232,118,0.28) 3px, transparent 7px),
+    radial-gradient(circle, rgba(255,252,205,0.75) 0 2px, rgba(255,232,118,0.25) 3px, transparent 7px);
+  background-repeat: no-repeat;
+  background-size: 12px 12px, 10px 10px, 14px 14px, 11px 11px, 13px 13px, 10px 10px;
+  background-position: 11vw 52vh, 22vw 63vh, 39vw 70vh, 58vw 46vh, 76vw 43vh, 91vw 68vh;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 8px rgba(255,235,140,0.55));
+  animation: qtbFireflyField 14s ease-in-out infinite alternate;
 }
-
-.qtb-forest-front {
-  z-index: 3;
-  bottom: -24vh;
-  height: 100vh;
-  background-image: url("./static/trees-row-front.svg");
-  background-size: 1600px 760px;
-  animation: qtbForestFrontScroll 130s linear infinite;
-}
-
-.qtb-firefly-layer {
-  position: fixed !important;
-  inset: 0;
-  z-index: 4 !important;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.qtb-firefly {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,252,205,1) 0%, rgba(255,239,142,0.96) 28%, rgba(255,232,118,0.34) 54%, transparent 78%);
-  opacity: 0;
-  filter: blur(0.2px);
-  box-shadow: 0 0 8px rgba(255,235,140,0.55), 0 0 18px rgba(255,235,140,0.26);
-  animation: qtbFireflyGlow 8s ease-in-out infinite, qtbFireflyDriftA 24s ease-in-out infinite alternate;
-}
-
-.qtb-firefly:nth-child(1) { left: 11vw; top: 52vh; animation-delay: -1.2s, -4s; }
-.qtb-firefly:nth-child(2) { left: 22vw; top: 63vh; animation-name: qtbFireflyGlow, qtbFireflyDriftB; animation-delay: -5.4s, -11s; }
-.qtb-firefly:nth-child(3) { left: 34vw; top: 49vh; animation-name: qtbFireflyGlow, qtbFireflyDriftC; animation-delay: -3.1s, -7s; }
-.qtb-firefly:nth-child(4) { left: 47vw; top: 58vh; animation-name: qtbFireflyGlow, qtbFireflyDriftD; animation-delay: -8.8s, -15s; }
-.qtb-firefly:nth-child(5) { left: 58vw; top: 46vh; animation-name: qtbFireflyGlow, qtbFireflyDriftB; animation-delay: -2.7s, -19s; }
-.qtb-firefly:nth-child(6) { left: 70vw; top: 62vh; animation-name: qtbFireflyGlow, qtbFireflyDriftC; animation-delay: -6.6s, -9s; }
-.qtb-firefly:nth-child(7) { left: 83vw; top: 54vh; animation-name: qtbFireflyGlow, qtbFireflyDriftA; animation-delay: -4.5s, -21s; }
-.qtb-firefly:nth-child(8) { left: 18vw; top: 72vh; animation-name: qtbFireflyGlow, qtbFireflyDriftD; animation-delay: -10s, -6s; }
-.qtb-firefly:nth-child(9) { left: 39vw; top: 70vh; animation-name: qtbFireflyGlow, qtbFireflyDriftA; animation-delay: -7.4s, -14s; }
-.qtb-firefly:nth-child(10) { left: 64vw; top: 74vh; animation-name: qtbFireflyGlow, qtbFireflyDriftB; animation-delay: -1.9s, -18s; }
-.qtb-firefly:nth-child(11) { left: 76vw; top: 43vh; animation-name: qtbFireflyGlow, qtbFireflyDriftC; animation-delay: -11.5s, -25s; }
-.qtb-firefly:nth-child(12) { left: 91vw; top: 68vh; animation-name: qtbFireflyGlow, qtbFireflyDriftD; animation-delay: -5.9s, -17s; }
 
 #quartz-root,
 #quartz-body,
@@ -140,21 +94,26 @@ footer {
 
 #quartz-root,
 #quartz-body,
-.center,
-.left,
-.right,
-article,
-footer {
-  position: relative !important;
-  z-index: auto !important;
+.page,
+.page > #quartz-body {
+  isolation: isolate !important;
 }
 
+.left,
+.right,
+.center,
+main,
+article,
+footer,
 .left > *,
 .right > *,
-.center > :not(article),
-.center article > :not(.qtb-firefly-layer):not(.qtb-forest-layers),
-footer,
-footer > *,
+.center > *,
+article > *,
+footer > * {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
 .qtb-hero,
 .qtb-block-title,
 article p,
@@ -164,7 +123,7 @@ article ol,
 article blockquote,
 article table {
   position: relative !important;
-  z-index: 30 !important;
+  z-index: 20 !important;
 }
 
 #quartz-root,
@@ -356,72 +315,32 @@ body main,
 body .right,
 body .right.sidebar { margin-top: var(--qtb-top-pad) !important; }
 
-/* Global stacking repair: injected decorative layers stay below all site chrome/content. */
-#quartz-root,
-#quartz-body,
-.page,
-.page > #quartz-body {
-  isolation: isolate !important;
-}
-
-.qtb-forest-layers {
-  z-index: 1 !important;
-}
-
-.qtb-firefly-layer {
-  z-index: 2 !important;
-}
-
-.left,
-.left.sidebar,
-.left.sidebar > *,
-.right,
-.right.sidebar,
-.right.sidebar > *,
-.center,
-.center > *,
-main,
-article,
-article > *,
-footer,
-footer > * {
-  position: relative !important;
-  z-index: 20 !important;
-}
-
-.qtb-hero,
-.qtb-block-title,
-article p,
-article ul,
-article ol,
-article blockquote,
-article table,
-article hr {
-  position: relative !important;
-  z-index: 30 !important;
-}
-
 @keyframes qtbStarPulse { 0%, 100% { opacity: 0.34; } 45% { opacity: 0.52; } }
-@keyframes qtbForestFarScroll { from { background-position: 0 bottom; } to { background-position: -1900px bottom; } }
-@keyframes qtbForestMidScroll { from { background-position: 0 bottom; } to { background-position: -1800px bottom; } }
-@keyframes qtbForestFrontScroll { from { background-position: 0 bottom; } to { background-position: -1600px bottom; } }
 
-@keyframes qtbFireflyGlow {
-  0%, 10%, 36%, 100% { opacity: 0; transform: scale(0.6); box-shadow: 0 0 0 rgba(255,235,140,0), 0 0 0 rgba(255,235,140,0); }
-  15% { opacity: 0.92; transform: scale(1.25); box-shadow: 0 0 10px rgba(255,235,140,0.9), 0 0 28px rgba(255,235,140,0.55); }
-  21% { opacity: 0.18; transform: scale(0.8); }
-  48% { opacity: 0.72; transform: scale(1); box-shadow: 0 0 8px rgba(255,235,140,0.76), 0 0 22px rgba(255,235,140,0.42); }
-  56% { opacity: 0.08; transform: scale(0.65); }
+@keyframes qtbForestParallax {
+  from {
+    background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%;
+  }
+  to {
+    background-position: -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%;
+  }
 }
 
-@keyframes qtbFireflyDriftA { 0% { translate: 0 0; } 50% { translate: 5vw -2vh; } 100% { translate: 2vw 3vh; } }
-@keyframes qtbFireflyDriftB { 0% { translate: 0 0; } 50% { translate: -3vw -4vh; } 100% { translate: 3vw 2vh; } }
-@keyframes qtbFireflyDriftC { 0% { translate: 0 0; } 50% { translate: 4vw 2vh; } 100% { translate: -2vw -3vh; } }
-@keyframes qtbFireflyDriftD { 0% { translate: 0 0; } 50% { translate: -2vw 3vh; } 100% { translate: 2vw -4vh; } }
+@keyframes qtbFireflyField {
+  0% {
+    opacity: 0.15;
+    background-position: 11vw 52vh, 22vw 63vh, 39vw 70vh, 58vw 46vh, 76vw 43vh, 91vw 68vh;
+  }
+  45% { opacity: 0.9; }
+  100% {
+    opacity: 0.45;
+    background-position: 15vw 49vh, 18vw 68vh, 42vw 66vh, 61vw 50vh, 73vw 47vh, 88vw 64vh;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
-  .qtb-forest,
-  .qtb-firefly { animation: none !important; }
-  .qtb-firefly { opacity: 0.18; box-shadow: none; }
+  body::after,
+  #quartz-root::before { animation: none !important; }
+  #quartz-root::before { opacity: 0.18; }
 }
