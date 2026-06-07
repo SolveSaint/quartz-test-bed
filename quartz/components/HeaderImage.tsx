@@ -4,18 +4,6 @@ const HeaderImage: QuartzComponent = () => {
   return (
     <>
       <style>{`
-        html body {
-          background-image: none !important;
-          background-color: #050807 !important;
-        }
-
-        html body::before,
-        html body::after {
-          opacity: 0 !important;
-          background: none !important;
-          background-image: none !important;
-        }
-
         #quartz-root .center .page-header header {
           margin-bottom: -1.15rem !important;
         }
