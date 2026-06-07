@@ -29,7 +29,9 @@ body {
 }
 
 body::before,
-html::before {
+body::after,
+html::before,
+html::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -46,12 +48,22 @@ body::before {
   mask-image: linear-gradient(to bottom, black 0%, black 46%, transparent 74%);
 }
 
+body::after {
+  z-index: 1;
+  background-image: url("./static/trees-far.svg");
+  background-repeat: repeat-x;
+  background-size: 2200px 520px;
+  background-position: 0 bottom;
+  opacity: 0.34;
+  animation: qtbFarTreesScroll 340s linear infinite;
+}
+
 html::before {
   left: 50%;
   top: 58%;
   width: clamp(220px, 22vw, 440px);
   height: clamp(52px, 6vw, 100px);
-  z-index: 3;
+  z-index: 2;
   background-image: url("./static/roaming-animal.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -61,41 +73,18 @@ html::before {
   animation: qtbAnimalPatrol 80s ease-in-out infinite;
 }
 
-.qtb-bg-layers {
-  position: fixed;
-  inset: 0;
+html::after {
   z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.qtb-bg-trees {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 70vh;
-  background-repeat: repeat-x;
-  background-position: 0 bottom;
-  will-change: background-position;
-}
-
-.qtb-bg-trees-far {
-  z-index: 1;
-  height: 64vh;
-  background-image: url("./static/trees-far.svg");
-  background-size: 2200px 820px;
-  opacity: 0.72;
-  animation: qtbFarTreesScroll 260s linear infinite;
-}
-
-.qtb-bg-trees-near {
-  z-index: 2;
-  height: 78vh;
   background-image: url("./static/trees-near.svg");
-  background-size: 1600px 940px;
-  opacity: 0.88;
-  animation: qtbNearTreesScroll 120s linear infinite;
+  background-repeat: repeat-x;
+  background-size: 1600px 620px;
+  background-position: 0 bottom;
+  opacity: 0.50;
+  animation: qtbNearTreesScroll 105s linear infinite;
+}
+
+.qtb-bg-layers {
+  display: none !important;
 }
 
 #quartz-root,
@@ -125,7 +114,7 @@ footer {
   z-index: 10;
 }
 
-.center article > :not(.qtb-bg-layers) {
+.center article > * {
   position: relative;
   z-index: 12;
 }
@@ -363,8 +352,9 @@ body .right.sidebar {
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
+  body::after,
   html::before,
-  .qtb-bg-trees {
+  html::after {
     animation: none !important;
   }
 }
