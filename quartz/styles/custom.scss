@@ -64,26 +64,28 @@ body::before {
 
 .qtb-forest-far {
   z-index: 1;
-  height: 48vh;
+  bottom: 2vh;
+  height: 66vh;
   background-image: url("./static/trees-row-far.svg");
-  background-size: 1900px 380px;
+  background-size: 1900px 560px;
   animation: qtbForestFarScroll 420s linear infinite;
 }
 
 .qtb-forest-mid {
   z-index: 2;
-  height: 58vh;
+  bottom: -2vh;
+  height: 76vh;
   background-image: url("./static/trees-row-mid.svg");
-  background-size: 1800px 500px;
+  background-size: 1800px 700px;
   animation: qtbForestMidScroll 260s linear infinite;
 }
 
 .qtb-forest-front {
   z-index: 3;
-  bottom: -1vh;
-  height: 70vh;
+  bottom: -24vh;
+  height: 86vh;
   background-image: url("./static/trees-row-front.svg");
-  background-size: 1600px 640px;
+  background-size: 1600px 760px;
   animation: qtbForestFrontScroll 130s linear infinite;
 }
 
