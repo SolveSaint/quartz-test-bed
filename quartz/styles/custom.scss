@@ -24,15 +24,14 @@ body {
 body {
   color: var(--qtb-text);
   background-image:
-    url("../static/trees-back.svg"),
     radial-gradient(ellipse at 18% 58%, rgba(27, 118, 82, 0.18), transparent 22rem),
     radial-gradient(ellipse at 86% 60%, rgba(39, 112, 84, 0.16), transparent 24rem),
     radial-gradient(ellipse at center, rgba(255,255,255,0.045), rgba(0,0,0,0.72) 78%),
     linear-gradient(to bottom, #151617 0%, #07100c 42%, #020403 100%);
-  background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position: center bottom, left center, right center, center, center;
-  background-size: 1800px 1100px, auto, auto, cover, cover;
-  background-attachment: fixed, fixed, fixed, fixed, fixed;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: left center, right center, center, center;
+  background-size: auto, auto, cover, cover;
+  background-attachment: fixed, fixed, fixed, fixed;
 }
 
 body::before {
@@ -49,6 +48,22 @@ body::before {
   mask-image: linear-gradient(to bottom, black 0%, black 46%, transparent 74%);
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("../static/trees-back.svg");
+  background-repeat: repeat-x;
+  background-size: 2300px 1050px;
+  background-position: 0 bottom;
+  opacity: 0.34;
+  filter: blur(0.4px) brightness(0.72) saturate(0.82);
+  animation: qtbFarTreesScroll 260s linear infinite;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 24%, black 100%);
+}
+
 html::before {
   content: "";
   position: fixed;
@@ -57,7 +72,7 @@ html::before {
   width: clamp(220px, 22vw, 440px);
   height: clamp(52px, 6vw, 100px);
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   background-image: url("../static/roaming-animal.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -66,6 +81,22 @@ html::before {
   filter: brightness(0.72) contrast(0.95) blur(0.2px) drop-shadow(0 0 8px rgba(43, 155, 104, 0.12));
   transform: translate(-50%, -50%);
   animation: qtbAnimalPatrol 80s ease-in-out infinite;
+}
+
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("../static/trees-back.svg");
+  background-repeat: repeat-x;
+  background-size: 1650px 1000px;
+  background-position: 0 bottom;
+  opacity: 0.46;
+  filter: brightness(0.54) contrast(1.08);
+  animation: qtbNearTreesScroll 130s linear infinite;
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 22%, black 50%, black 100%);
 }
 
 #quartz-root,
@@ -319,6 +350,16 @@ body .right.sidebar {
   45% { opacity: 0.52; }
 }
 
+@keyframes qtbFarTreesScroll {
+  from { background-position: 0 bottom; }
+  to { background-position: -2300px bottom; }
+}
+
+@keyframes qtbNearTreesScroll {
+  from { background-position: 0 bottom; }
+  to { background-position: -1650px bottom; }
+}
+
 @keyframes qtbAnimalPatrol {
   0% { transform: translate(-50%, -50%) translateX(-42vw); }
   45% { transform: translate(-50%, -50%) translateX(0) translateY(-8vh); }
@@ -328,7 +369,9 @@ body .right.sidebar {
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
-  html::before {
+  body::after,
+  html::before,
+  html::after {
     animation: none !important;
   }
 }
