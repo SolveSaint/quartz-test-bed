@@ -275,6 +275,33 @@ a {
   color: var(--qtb-blue);
 }
 
+/* Final Quartz 5 frame gutter and title replacement. */
+.page,
+.page[data-frame="default"] {
+  box-sizing: border-box;
+  padding-top: var(--qtb-top-pad) !important;
+}
+
+.page[data-frame="default"] > #quartz-body,
+#quartz-body {
+  padding-top: 0 !important;
+}
+
+.page-title a {
+  font-size: 0 !important;
+}
+
+.page-title a::before {
+  content: "Quartz Test Bed";
+  display: inline-block;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1;
+  color: transparent;
+  background-image: linear-gradient(90deg, #e75563 0%, #f4f4f4 45%, #356bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 @keyframes qtbStarPulse {
   0%, 100% { opacity: 0.34; }
   45% { opacity: 0.52; }
