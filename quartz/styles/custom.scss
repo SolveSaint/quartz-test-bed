@@ -321,11 +321,17 @@ a {
   z-index: 0;
   pointer-events: none;
   background: radial-gradient(circle, rgba(255,252,205,1) 0 2px, transparent 7px) 20vw 55vh / 12px 12px no-repeat;
-  animation: qtbFireflyFade 8s ease-in-out infinite alternate;
+  animation: qtbFireflyBlink 13s ease-in-out infinite;
 }
 
-@keyframes qtbFireflyFade {
-  from { opacity: 0.05; background-position: 20vw 55vh; }
-  45% { opacity: 1; background-position: 24vw 51vh; }
-  to { opacity: 0.2; background-position: 18vw 58vh; }
+@keyframes qtbFireflyBlink {
+  0% { opacity: 0; background-position: 20vw 55vh; }
+  16% { opacity: 0; background-position: 21vw 54vh; }
+  23% { opacity: 1; background-position: 22vw 53vh; }
+  30% { opacity: 0.12; background-position: 23vw 52vh; }
+  48% { opacity: 0; background-position: 24vw 51vh; }
+  64% { opacity: 0; background-position: 22vw 53vh; }
+  72% { opacity: 0.85; background-position: 21vw 56vh; }
+  82% { opacity: 0; background-position: 20vw 58vh; }
+  100% { opacity: 0; background-position: 19vw 57vh; }
 }
