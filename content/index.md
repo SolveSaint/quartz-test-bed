@@ -2,6 +2,12 @@
 title: Quartz Test Bed
 ---
 
+<div class="qtb-forest-layers" aria-hidden="true">
+  <span class="qtb-forest qtb-forest-far"></span>
+  <span class="qtb-forest qtb-forest-mid"></span>
+  <span class="qtb-forest qtb-forest-front"></span>
+</div>
+
 <div class="qtb-firefly-layer" aria-hidden="true">
   <span class="qtb-firefly"></span>
   <span class="qtb-firefly"></span>
