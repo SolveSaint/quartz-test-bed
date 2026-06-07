@@ -1,3 +1,8 @@
+html body {
+  background-image: none !important;
+  background-color: #050807 !important;
+}
+
 html body:before {
   opacity: 0 !important;
 }
