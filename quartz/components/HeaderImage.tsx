@@ -4,6 +4,15 @@ const HeaderImage: QuartzComponent = () => {
   return (
     <>
       <style>{`
+        #quartz-root .center .page-header header {
+          margin-bottom: -3.0rem !important;
+        }
+
+        #quartz-root .center .page-header .content-meta {
+          margin-top: 0 !important;
+          margin-bottom: 0.35rem !important;
+        }
+
         #quartz-root .index-title-card {
           position: relative;
           display: inline-block;
@@ -75,7 +84,7 @@ const HeaderImage: QuartzComponent = () => {
           height: 1.15rem !important;
         }
       `}</style>
-      <div style={{ width: "100%", textAlign: "center", marginBottom: "1rem" }}>
+      <div style={{ width: "100%", textAlign: "center", marginBottom: "0" }}>
         <img
           src="https://solvesaint.github.io/quartz-test-bed/static/banner-forest.svg"
           alt="Quartz Test Bed banner"
