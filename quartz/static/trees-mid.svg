@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" preserveAspectRatio="none">
+  <rect width="1600" height="760" fill="none"/>
+  <g>
+    <rect x="48" y="505" width="24" height="255" fill="#04150e"/>
+    <polygon fill="#123c2a" points="60,235 -20,500 140,500"/>
+    <polygon fill="#0e2e20" points="60,348 0,610 120,610"/>
+    <polygon fill="#092018" points="60,456 18,700 102,700"/>
+
+    <rect x="248" y="485" width="26" height="275" fill="#04140e"/>
+    <polygon fill="#14422e" points="261,198 172,482 350,482"/>
+    <polygon fill="#0e3022" points="261,322 194,612 328,612"/>
+    <polygon fill="#092018" points="261,444 214,710 308,710"/>
+
+    <rect x="478" y="520" width="22" height="240" fill="#04140d"/>
+    <polygon fill="#123927" points="489,270 414,512 564,512"/>
+    <polygon fill="#0d2b1e" points="489,376 434,620 544,620"/>
+    <polygon fill="#081d14" points="489,480 452,704 526,704"/>
+
+    <rect x="690" y="488" width="26" height="272" fill="#04140e"/>
+    <polygon fill="#14452f" points="703,205 612,486 794,486"/>
+    <polygon fill="#0e3122" points="703,330 634,616 772,616"/>
+    <polygon fill="#092018" points="703,452 654,714 752,714"/>
+
+    <rect x="930" y="510" width="24" height="250" fill="#04140e"/>
+    <polygon fill="#123d2a" points="942,242 860,504 1024,504"/>
+    <polygon fill="#0e2f20" points="942,356 880,616 1004,616"/>
+    <polygon fill="#092018" points="942,466 898,708 986,708"/>
+
+    <rect x="1158" y="482" width="28" height="278" fill="#03130d"/>
+    <polygon fill="#154933" points="1172,180 1076,480 1268,480"/>
+    <polygon fill="#0f3424" points="1172,314 1098,618 1246,618"/>
+    <polygon fill="#092119" points="1172,446 1118,718 1226,718"/>
+
+    <rect x="1408" y="510" width="24" height="250" fill="#04140e"/>
+    <polygon fill="#123d2a" points="1420,242 1338,504 1502,504"/>
+    <polygon fill="#0e2f20" points="1420,356 1358,616 1482,616"/>
+    <polygon fill="#092018" points="1420,466 1376,708 1464,708"/>
+  </g>
+</svg>
