@@ -2,6 +2,11 @@
 title: Quartz Test Bed
 ---
 
+<div class="qtb-bg-layers" aria-hidden="true">
+  <div class="qtb-bg-trees qtb-bg-trees-far"></div>
+  <div class="qtb-bg-trees qtb-bg-trees-near"></div>
+</div>
+
 <div class="qtb-hero" role="img" aria-label="Quartz Test Bed forest banner">
   <div class="qtb-hero-inner">
     <div class="qtb-hero-title">Quartz Test Bed</div>
