@@ -356,6 +356,51 @@ body main,
 body .right,
 body .right.sidebar { margin-top: var(--qtb-top-pad) !important; }
 
+/* Global stacking repair: injected decorative layers stay below all site chrome/content. */
+#quartz-root,
+#quartz-body,
+.page,
+.page > #quartz-body {
+  isolation: isolate !important;
+}
+
+.qtb-forest-layers {
+  z-index: 1 !important;
+}
+
+.qtb-firefly-layer {
+  z-index: 2 !important;
+}
+
+.left,
+.left.sidebar,
+.left.sidebar > *,
+.right,
+.right.sidebar,
+.right.sidebar > *,
+.center,
+.center > *,
+main,
+article,
+article > *,
+footer,
+footer > * {
+  position: relative !important;
+  z-index: 20 !important;
+}
+
+.qtb-hero,
+.qtb-block-title,
+article p,
+article ul,
+article ol,
+article blockquote,
+article table,
+article hr {
+  position: relative !important;
+  z-index: 30 !important;
+}
+
 @keyframes qtbStarPulse { 0%, 100% { opacity: 0.34; } 45% { opacity: 0.52; } }
 @keyframes qtbForestFarScroll { from { background-position: 0 bottom; } to { background-position: -1900px bottom; } }
 @keyframes qtbForestMidScroll { from { background-position: 0 bottom; } to { background-position: -1800px bottom; } }
