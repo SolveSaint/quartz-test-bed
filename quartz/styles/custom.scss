@@ -24,7 +24,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Layered parallax stack, front to back: front trees, mid trees, far trees, stars. */
 body::before {
   content: "";
   position: fixed;
@@ -37,21 +36,12 @@ body::before {
     url("./static/trees-row-far.svg"),
     url("./static/stars-twinkle.svg");
   background-repeat: repeat-x, repeat-x, repeat-x, repeat;
-  background-size:
-    1600px 760px,
-    1800px 700px,
-    1900px 560px,
-    1400px 900px;
-  background-position:
-    0 calc(100% + 24vh),
-    0 calc(100% + 2vh),
-    0 100%,
-    0 0;
+  background-size: 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px;
+  background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
   filter: blur(0.2px);
   animation: qtbLayeredParallax 240s linear infinite;
 }
 
-/* Oversized lower-forest fog: gradients live inside one large layer, moved by transform so no cloud edge can clip into view. */
 body::after {
   content: "";
   position: fixed;
@@ -308,14 +298,9 @@ article hr {
   border-color: rgba(255,255,255,0.18);
 }
 
-footer {
-  color: var(--qtb-muted);
-}
-
+footer { color: var(--qtb-muted); }
 footer a,
-a {
-  color: var(--qtb-blue);
-}
+a { color: var(--qtb-blue); }
 
 .page,
 .page[data-frame="default"] {
@@ -324,52 +309,25 @@ a {
 }
 
 .page[data-frame="default"] > #quartz-body,
-#quartz-body {
-  padding-top: 0 !important;
-}
+#quartz-body { padding-top: 0 !important; }
 
 @keyframes qtbLayeredParallax {
-  0% {
-    opacity: 0.88;
-    background-position:
-      0 calc(100% + 24vh),
-      0 calc(100% + 2vh),
-      0 100%,
-      0 0;
-  }
+  0% { opacity: 0.88; background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0; }
   38% { opacity: 1; }
   65% { opacity: 0.86; }
-  100% {
-    opacity: 0.93;
-    background-position:
-      -1600px calc(100% + 24vh),
-      -900px calc(100% + 2vh),
-      -350px 100%,
-      -140px 0;
-  }
+  100% { opacity: 0.93; background-position: -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%, -140px 0; }
 }
 
 @keyframes qtbFogDrift {
-  0% {
-    opacity: 0.48;
-    transform: translate3d(-2vw, -1vh, 0) scale(1.02);
-  }
-  48% {
-    opacity: 0.72;
-    transform: translate3d(2vw, 1vh, 0) scale(1.04);
-  }
-  100% {
-    opacity: 0.54;
-    transform: translate3d(5vw, 2vh, 0) scale(1.02);
-  }
+  0% { opacity: 0.48; transform: translate3d(-2vw, -1vh, 0) scale(1.02); }
+  48% { opacity: 0.72; transform: translate3d(2vw, 1vh, 0) scale(1.04); }
+  100% { opacity: 0.54; transform: translate3d(5vw, 2vh, 0) scale(1.02); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
   body::after,
-  #quartz-root::before {
-    animation: none !important;
-  }
+  #quartz-root::before { animation: none !important; }
 }
 
 #quartz-root::before {
@@ -383,108 +341,26 @@ a {
   z-index: 0;
   pointer-events: none;
   background: transparent;
-  animation: qtbFireflyShadowField 24s linear infinite;
+  animation: qtbFireflyShadowField 46s linear infinite;
 }
 
 @keyframes qtbFireflyShadowField {
-  0%, 4%, 6%, 15%, 17%, 26%, 28%, 38%, 40%, 49%, 51%, 60%, 62%, 72%, 74%, 83%, 85%, 94%, 100% {
+  0%, 3%, 5.5%, 13%, 15.5%, 25%, 27.5%, 38%, 40.5%, 52%, 54.5%, 66%, 68.5%, 80%, 82.5%, 93%, 95.5%, 100% {
     box-shadow:
-      20vw 55vh 3px 1px rgba(255,225,70,0),
-      34vw 69vh 3px 1px rgba(255,225,70,0),
-      51vw 47vh 3px 1px rgba(255,225,70,0),
-      67vw 63vh 3px 1px rgba(255,225,70,0),
-      83vw 52vh 3px 1px rgba(255,225,70,0),
-      27vw 45vh 3px 1px rgba(255,225,70,0),
-      73vw 72vh 3px 1px rgba(255,225,70,0);
+      20vw 55vh 2px 0 rgba(255,225,70,0),
+      34vw 69vh 2px 0 rgba(255,225,70,0),
+      51vw 47vh 2px 0 rgba(255,225,70,0),
+      67vw 63vh 2px 0 rgba(255,225,70,0),
+      83vw 52vh 2px 0 rgba(255,225,70,0),
+      27vw 45vh 2px 0 rgba(255,225,70,0),
+      73vw 72vh 2px 0 rgba(255,225,70,0);
   }
-  5% {
-    box-shadow:
-      20.6vw 54.5vh 5px 1px rgba(255,230,65,1),
-      34vw 69vh 3px 1px rgba(255,225,70,0),
-      51vw 47vh 3px 1px rgba(255,225,70,0),
-      67vw 63vh 3px 1px rgba(255,225,70,0),
-      83vw 52vh 3px 1px rgba(255,225,70,0),
-      27.4vw 44.7vh 4px 1px rgba(255,230,65,0.45),
-      73vw 72vh 3px 1px rgba(255,225,70,0);
-  }
-  16% {
-    box-shadow:
-      20vw 55vh 3px 1px rgba(255,225,70,0),
-      35.7vw 67.4vh 5px 1px rgba(255,230,65,0.95),
-      51vw 47vh 3px 1px rgba(255,225,70,0),
-      67vw 63vh 3px 1px rgba(255,225,70,0),
-      84.1vw 50.9vh 4px 1px rgba(255,230,65,0.35),
-      28vw 44vh 3px 1px rgba(255,225,70,0),
-      73vw 72vh 3px 1px rgba(255,225,70,0);
-  }
-  27% {
-    box-shadow:
-      20vw 55vh 3px 1px rgba(255,225,70,0),
-      34vw 69vh 3px 1px rgba(255,225,70,0),
-      52.5vw 46.2vh 5px 1px rgba(255,230,65,1),
-      67vw 63vh 3px 1px rgba(255,225,70,0),
-      83vw 52vh 3px 1px rgba(255,225,70,0),
-      27vw 45vh 3px 1px rgba(255,225,70,0),
-      73.7vw 70.8vh 4px 1px rgba(255,230,65,0.4);
-  }
-  39% {
-    box-shadow:
-      20vw 55vh 3px 1px rgba(255,225,70,0),
-      34vw 69vh 3px 1px rgba(255,225,70,0),
-      51vw 47vh 3px 1px rgba(255,225,70,0),
-      68.8vw 61.8vh 5px 1px rgba(255,230,65,0.95),
-      83vw 52vh 3px 1px rgba(255,225,70,0),
-      27vw 45vh 3px 1px rgba(255,225,70,0),
-      74vw 70vh 4px 1px rgba(255,230,65,0.25);
-  }
-  50% {
-    box-shadow:
-      19.4vw 56.2vh 4px 1px rgba(255,230,65,0.35),
-      35vw 69vh 3px 1px rgba(255,225,70,0),
-      52vw 47vh 3px 1px rgba(255,225,70,0),
-      69.6vw 61.2vh 3px 1px rgba(255,225,70,0),
-      81.5vw 55vh 5px 1px rgba(255,230,65,1),
-      27vw 45vh 3px 1px rgba(255,225,70,0),
-      73vw 72vh 3px 1px rgba(255,225,70,0);
-  }
-  61% {
-    box-shadow:
-      20vw 55vh 3px 1px rgba(255,225,70,0),
-      33.5vw 71vh 4px 1px rgba(255,230,65,0.35),
-      51vw 47vh 3px 1px rgba(255,225,70,0),
-      67vw 63vh 3px 1px rgba(255,225,70,0),
-      82vw 54vh 3px 1px rgba(255,225,70,0),
-      29vw 43vh 5px 1px rgba(255,230,65,0.95),
-      73vw 72vh 3px 1px rgba(255,225,70,0);
-  }
-  73% {
-    box-shadow:
-      20vw 55vh 3px 1px rgba(255,225,70,0),
-      34vw 69vh 3px 1px rgba(255,225,70,0),
-      51vw 47vh 3px 1px rgba(255,225,70,0),
-      67vw 63vh 3px 1px rgba(255,225,70,0),
-      83vw 52vh 3px 1px rgba(255,225,70,0),
-      29.5vw 42.6vh 4px 1px rgba(255,230,65,0.25),
-      72.4vw 72.8vh 5px 1px rgba(255,230,65,0.9);
-  }
-  84% {
-    box-shadow:
-      21vw 54vh 5px 1px rgba(255,230,65,0.85),
-      34vw 69vh 3px 1px rgba(255,225,70,0),
-      53vw 46vh 4px 1px rgba(255,230,65,0.3),
-      67vw 63vh 3px 1px rgba(255,225,70,0),
-      83vw 52vh 3px 1px rgba(255,225,70,0),
-      27vw 45vh 3px 1px rgba(255,225,70,0),
-      73vw 72vh 3px 1px rgba(255,225,70,0);
-  }
-  95% {
-    box-shadow:
-      20vw 55vh 3px 1px rgba(255,225,70,0),
-      34vw 69vh 3px 1px rgba(255,225,70,0),
-      51vw 47vh 3px 1px rgba(255,225,70,0),
-      69vw 62vh 4px 1px rgba(255,230,65,0.3),
-      82vw 53vh 5px 1px rgba(255,230,65,0.9),
-      27vw 45vh 3px 1px rgba(255,225,70,0),
-      73vw 72vh 3px 1px rgba(255,225,70,0);
-  }
+  4.2% { box-shadow: 20vw 55vh 7px 1px rgba(255,235,80,1), 34vw 69vh 2px 0 rgba(255,225,70,0), 51vw 47vh 2px 0 rgba(255,225,70,0), 67vw 63vh 2px 0 rgba(255,225,70,0), 83vw 52vh 2px 0 rgba(255,225,70,0), 27vw 45vh 3px 0 rgba(255,235,80,0.25), 73vw 72vh 2px 0 rgba(255,225,70,0); }
+  14.2% { box-shadow: 20vw 55vh 2px 0 rgba(255,225,70,0), 34vw 69vh 7px 1px rgba(255,235,80,0.95), 51vw 47vh 2px 0 rgba(255,225,70,0), 67vw 63vh 2px 0 rgba(255,225,70,0), 83vw 52vh 3px 0 rgba(255,235,80,0.25), 27vw 45vh 2px 0 rgba(255,225,70,0), 73vw 72vh 2px 0 rgba(255,225,70,0); }
+  26.2% { box-shadow: 20vw 55vh 2px 0 rgba(255,225,70,0), 34vw 69vh 2px 0 rgba(255,225,70,0), 51vw 47vh 7px 1px rgba(255,235,80,1), 67vw 63vh 2px 0 rgba(255,225,70,0), 83vw 52vh 2px 0 rgba(255,225,70,0), 27vw 45vh 2px 0 rgba(255,225,70,0), 73vw 72vh 3px 0 rgba(255,235,80,0.25); }
+  39.2% { box-shadow: 20vw 55vh 2px 0 rgba(255,225,70,0), 34vw 69vh 2px 0 rgba(255,225,70,0), 51vw 47vh 2px 0 rgba(255,225,70,0), 67vw 63vh 7px 1px rgba(255,235,80,0.95), 83vw 52vh 2px 0 rgba(255,225,70,0), 27vw 45vh 2px 0 rgba(255,225,70,0), 73vw 72vh 3px 0 rgba(255,235,80,0.20); }
+  53.2% { box-shadow: 20vw 55vh 3px 0 rgba(255,235,80,0.22), 34vw 69vh 2px 0 rgba(255,225,70,0), 51vw 47vh 2px 0 rgba(255,225,70,0), 67vw 63vh 2px 0 rgba(255,225,70,0), 83vw 52vh 7px 1px rgba(255,235,80,1), 27vw 45vh 2px 0 rgba(255,225,70,0), 73vw 72vh 2px 0 rgba(255,225,70,0); }
+  67.2% { box-shadow: 20vw 55vh 2px 0 rgba(255,225,70,0), 34vw 69vh 3px 0 rgba(255,235,80,0.25), 51vw 47vh 2px 0 rgba(255,225,70,0), 67vw 63vh 2px 0 rgba(255,225,70,0), 83vw 52vh 2px 0 rgba(255,225,70,0), 27vw 45vh 7px 1px rgba(255,235,80,0.95), 73vw 72vh 2px 0 rgba(255,225,70,0); }
+  81.2% { box-shadow: 20vw 55vh 2px 0 rgba(255,225,70,0), 34vw 69vh 2px 0 rgba(255,225,70,0), 51vw 47vh 2px 0 rgba(255,225,70,0), 67vw 63vh 2px 0 rgba(255,225,70,0), 83vw 52vh 2px 0 rgba(255,225,70,0), 27vw 45vh 3px 0 rgba(255,235,80,0.20), 73vw 72vh 7px 1px rgba(255,235,80,0.9); }
+  94.2% { box-shadow: 20vw 55vh 7px 1px rgba(255,235,80,0.85), 34vw 69vh 2px 0 rgba(255,225,70,0), 51vw 47vh 3px 0 rgba(255,235,80,0.22), 67vw 63vh 2px 0 rgba(255,225,70,0), 83vw 52vh 2px 0 rgba(255,225,70,0), 27vw 45vh 2px 0 rgba(255,225,70,0), 73vw 72vh 2px 0 rgba(255,225,70,0); }
 }
