@@ -1,38 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" preserveAspectRatio="none">
   <rect width="1600" height="840" fill="none"/>
   <g>
-    <rect x="118" y="598" width="38" height="242" fill="#010805"/><polygon fill="#092c1e" points="137,190 8,598 266,598"/>
-    <rect x="250" y="618" width="30" height="222" fill="#010805"/><polygon fill="#0a3020" points="265,315 158,618 372,618"/>
-    <rect x="392" y="562" width="46" height="278" fill="#010805"/><polygon fill="#0b3624" points="415,82 244,562 586,562"/>
-    <rect x="586" y="622" width="32" height="218" fill="#010805"/><polygon fill="#092d1f" points="602,338 492,622 712,622"/>
-    <rect x="720" y="588" width="42" height="252" fill="#010805"/><polygon fill="#0a3322" points="741,165 586,588 896,588"/>
-    <rect x="902" y="612" width="34" height="228" fill="#010805"/><polygon fill="#0b3624" points="919,275 792,612 1046,612"/>
-    <rect x="1052" y="568" width="46" height="272" fill="#010805"/><polygon fill="#092c1e" points="1075,105 906,568 1244,568"/>
-    <rect x="1238" y="620" width="32" height="220" fill="#010805"/><polygon fill="#0a3121" points="1254,325 1138,620 1370,620"/>
-    <rect x="1390" y="582" width="40" height="258" fill="#010805"/><polygon fill="#0b3423" points="1410,150 1264,582 1556,582"/>
-  </g>
-  <g>
-    <path d="M0 570 C150 548 290 584 430 565 C600 542 742 585 900 560 C1080 532 1234 580 1395 556 C1470 545 1535 551 1600 540 L1600 840 L0 840 Z" fill="#06180f" opacity="0.96"/>
-    <path d="M0 590 C180 570 305 604 465 582 C625 562 790 604 940 580 C1120 553 1265 600 1430 578 C1515 566 1565 570 1600 565 L1600 840 L0 840 Z" fill="#092418" opacity="0.92"/>
-    <path d="M0 610 C180 594 340 620 500 606 C690 588 835 620 1010 604 C1185 586 1340 620 1600 590 L1600 840 L0 840 Z" fill="#021008" opacity="0.92"/>
-    <g stroke="#103d29" stroke-width="5" stroke-linecap="round" opacity="0.85">
-      <path d="M86 604l-18-38"/><path d="M106 602l10-45"/><path d="M354 598l-15-42"/><path d="M530 603l18-48"/><path d="M780 594l-10-50"/><path d="M1030 592l18-42"/><path d="M1210 604l-20-44"/><path d="M1460 586l18-45"/>
-    </g>
-  </g>
-  <g fill="#020b06" opacity="0.86">
-    <path d="M178 596c10-22 43-23 57 0-18 9-39 9-57 0z"/><rect x="202" y="596" width="9" height="34" rx="4"/>
-    <path d="M244 604c8-16 31-17 42 0-13 7-29 7-42 0z"/><rect x="262" y="604" width="7" height="26" rx="3"/>
-    <path d="M444 588c15-23 51-22 66 1-22 8-45 8-66-1z"/><rect x="472" y="588" width="10" height="38" rx="5"/>
-    <path d="M806 596c9-20 38-20 51 0-16 8-34 8-51 0z"/><rect x="828" y="596" width="8" height="31" rx="4"/>
-    <path d="M1168 582c13-22 48-22 63 1-20 8-43 8-63-1z"/><rect x="1195" y="582" width="9" height="36" rx="4"/>
-    <path d="M1346 602c8-17 33-17 44 0-14 7-30 7-44 0z"/><rect x="1365" y="602" width="7" height="25" rx="3"/>
-  </g>
-  <g fill="#031008" opacity="0.78">
-    <path d="M640 594c-9-31 4-57 22-61 19 4 31 31 18 61z"/>
-    <path d="M984 590c-8-28 3-52 20-56 17 4 28 29 16 56z"/>
-    <path d="M318 602c-6-22 3-41 16-44 13 3 21 23 12 44z"/>
-  </g>
-  <g fill="none" stroke="#061a10" stroke-width="5" stroke-linecap="round" opacity="0.88">
-    <path d="M104 612c42-12 86-13 134-4"/><path d="M404 604c58-11 108-10 158 3"/><path d="M760 610c54-12 110-11 168 2"/><path d="M1128 598c55-11 110-11 166 0"/>
+    <rect x="118" y="560" width="38" height="280" fill="#010805"/><polygon fill="#092c1e" points="137,190 8,560 266,560"/>
+    <rect x="250" y="582" width="30" height="258" fill="#010805"/><polygon fill="#0a3020" points="265,315 158,582 372,582"/>
+    <rect x="392" y="520" width="46" height="320" fill="#010805"/><polygon fill="#0b3624" points="415,82 244,520 586,520"/>
+    <rect x="586" y="590" width="32" height="250" fill="#010805"/><polygon fill="#092d1f" points="602,338 492,590 712,590"/>
+    <rect x="720" y="548" width="42" height="292" fill="#010805"/><polygon fill="#0a3322" points="741,165 586,548 896,548"/>
+    <rect x="902" y="582" width="34" height="258" fill="#010805"/><polygon fill="#0b3624" points="919,275 792,582 1046,582"/>
+    <rect x="1052" y="528" width="46" height="312" fill="#010805"/><polygon fill="#092c1e" points="1075,105 906,528 1244,528"/>
+    <rect x="1238" y="590" width="32" height="250" fill="#010805"/><polygon fill="#0a3121" points="1254,325 1138,590 1370,590"/>
+    <rect x="1390" y="542" width="40" height="298" fill="#010805"/><polygon fill="#0b3423" points="1410,150 1264,542 1556,542"/>
   </g>
 </svg>
