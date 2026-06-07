@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 300" preserveAspectRatio="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 820" preserveAspectRatio="none">
   <defs>
-    <filter id="soft" x="-20%" y="-55%" width="140%" height="210%">
-      <feGaussianBlur stdDeviation="22"/>
+    <filter id="soft" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="30"/>
     </filter>
   </defs>
-  <rect width="2200" height="300" fill="none"/>
-  <g filter="url(#soft)" opacity="0.56">
-    <ellipse cx="220" cy="204" rx="330" ry="48" fill="#a6ccea" opacity="0.12"/>
-    <ellipse cx="570" cy="158" rx="420" ry="58" fill="#9edfc1" opacity="0.08"/>
-    <ellipse cx="980" cy="222" rx="460" ry="54" fill="#bbd9ea" opacity="0.11"/>
-    <ellipse cx="1390" cy="142" rx="430" ry="54" fill="#b79ded" opacity="0.07"/>
-    <ellipse cx="1780" cy="196" rx="500" ry="58" fill="#a7d0ec" opacity="0.10"/>
-    <ellipse cx="2180" cy="132" rx="260" ry="44" fill="#9edfc1" opacity="0.07"/>
+  <rect width="2200" height="820" fill="none"/>
+  <g filter="url(#soft)">
+    <ellipse cx="220" cy="610" rx="390" ry="70" fill="#a6ccea" opacity="0.10"/>
+    <ellipse cx="570" cy="370" rx="500" ry="80" fill="#9edfc1" opacity="0.07"/>
+    <ellipse cx="980" cy="700" rx="540" ry="82" fill="#bbd9ea" opacity="0.10"/>
+    <ellipse cx="1390" cy="310" rx="520" ry="74" fill="#b79ded" opacity="0.07"/>
+    <ellipse cx="1780" cy="570" rx="580" ry="82" fill="#a7d0ec" opacity="0.09"/>
+    <ellipse cx="2180" cy="230" rx="330" ry="58" fill="#9edfc1" opacity="0.07"/>
+    <ellipse cx="830" cy="170" rx="330" ry="52" fill="#c7dfec" opacity="0.07"/>
+    <ellipse cx="1620" cy="150" rx="360" ry="54" fill="#b69eed" opacity="0.06"/>
   </g>
-  <g filter="url(#soft)" opacity="0.46">
-    <path d="M-150 238 C90 194 260 226 500 178 C740 130 930 202 1160 154 C1400 104 1600 170 1840 128 C2040 94 2190 112 2370 86" fill="none" stroke="#c7dfec" stroke-opacity="0.09" stroke-width="56" stroke-linecap="round"/>
+  <g filter="url(#soft)" opacity="0.38">
+    <path d="M-150 690 C90 540 260 640 500 480 C740 320 930 560 1160 410 C1400 250 1600 470 1840 340 C2040 230 2190 290 2370 190" fill="none" stroke="#c7dfec" stroke-opacity="0.09" stroke-width="78" stroke-linecap="round"/>
   </g>
 </svg>
