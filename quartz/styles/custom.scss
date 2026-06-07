@@ -30,7 +30,6 @@ body {
 
 body::before,
 body::after,
-html::before,
 html::after {
   content: "";
   position: fixed;
@@ -58,31 +57,6 @@ body::after {
   animation: qtbFarTreesScroll 340s linear infinite;
 }
 
-html::before {
-  left: 14vw;
-  top: 54vh;
-  right: auto;
-  bottom: auto;
-  width: 10px;
-  height: 10px;
-  z-index: 2;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 248, 190, 1) 0%,
-    rgba(255, 235, 135, 0.98) 28%,
-    rgba(255, 225, 110, 0.35) 52%,
-    rgba(255, 225, 110, 0.08) 68%,
-    transparent 76%
-  );
-  box-shadow:
-    0 0 0 rgba(255, 235, 140, 0),
-    0 0 0 rgba(255, 235, 140, 0);
-  opacity: 0.14;
-  transform: translate(-50%, -50%);
-  animation: qtbFireflyBloom 12s ease-in-out infinite;
-}
-
 html::after {
   z-index: 2;
   background-image: url("./static/trees-near.svg");
@@ -95,6 +69,148 @@ html::after {
 
 .qtb-bg-layers {
   display: none !important;
+}
+
+.qtb-firefly-layer {
+  position: fixed !important;
+  inset: 0;
+  z-index: 8 !important;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.qtb-firefly {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 252, 205, 1) 0%,
+    rgba(255, 239, 142, 0.96) 28%,
+    rgba(255, 232, 118, 0.34) 54%,
+    rgba(255, 232, 118, 0.08) 70%,
+    transparent 78%
+  );
+  opacity: 0;
+  filter: blur(0.2px);
+  box-shadow:
+    0 0 8px rgba(255, 235, 140, 0.55),
+    0 0 18px rgba(255, 235, 140, 0.26);
+  animation:
+    qtbFireflyGlow 8s ease-in-out infinite,
+    qtbFireflyDriftA 24s ease-in-out infinite alternate;
+}
+
+.qtb-firefly:nth-child(1) {
+  left: 11vw;
+  top: 52vh;
+  animation-duration: 7.5s, 28s;
+  animation-delay: -1.2s, -4s;
+}
+
+.qtb-firefly:nth-child(2) {
+  left: 22vw;
+  top: 63vh;
+  width: 5px;
+  height: 5px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftB;
+  animation-duration: 9.6s, 31s;
+  animation-delay: -5.4s, -11s;
+}
+
+.qtb-firefly:nth-child(3) {
+  left: 34vw;
+  top: 49vh;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftC;
+  animation-duration: 6.8s, 26s;
+  animation-delay: -3.1s, -7s;
+}
+
+.qtb-firefly:nth-child(4) {
+  left: 47vw;
+  top: 58vh;
+  width: 6px;
+  height: 6px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftD;
+  animation-duration: 10.4s, 34s;
+  animation-delay: -8.8s, -15s;
+}
+
+.qtb-firefly:nth-child(5) {
+  left: 58vw;
+  top: 46vh;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftB;
+  animation-duration: 8.9s, 27s;
+  animation-delay: -2.7s, -19s;
+}
+
+.qtb-firefly:nth-child(6) {
+  left: 70vw;
+  top: 62vh;
+  width: 5px;
+  height: 5px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftC;
+  animation-duration: 11.2s, 36s;
+  animation-delay: -6.6s, -9s;
+}
+
+.qtb-firefly:nth-child(7) {
+  left: 83vw;
+  top: 54vh;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftA;
+  animation-duration: 7.9s, 30s;
+  animation-delay: -4.5s, -21s;
+}
+
+.qtb-firefly:nth-child(8) {
+  left: 18vw;
+  top: 72vh;
+  width: 4px;
+  height: 4px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftD;
+  animation-duration: 12.5s, 38s;
+  animation-delay: -10s, -6s;
+}
+
+.qtb-firefly:nth-child(9) {
+  left: 39vw;
+  top: 70vh;
+  width: 5px;
+  height: 5px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftA;
+  animation-duration: 9.1s, 33s;
+  animation-delay: -7.4s, -14s;
+}
+
+.qtb-firefly:nth-child(10) {
+  left: 64vw;
+  top: 74vh;
+  width: 6px;
+  height: 6px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftB;
+  animation-duration: 8.2s, 29s;
+  animation-delay: -1.9s, -18s;
+}
+
+.qtb-firefly:nth-child(11) {
+  left: 76vw;
+  top: 43vh;
+  width: 4px;
+  height: 4px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftC;
+  animation-duration: 13s, 42s;
+  animation-delay: -11.5s, -25s;
+}
+
+.qtb-firefly:nth-child(12) {
+  left: 91vw;
+  top: 68vh;
+  width: 5px;
+  height: 5px;
+  animation-name: qtbFireflyGlow, qtbFireflyDriftD;
+  animation-duration: 10.8s, 37s;
+  animation-delay: -5.9s, -17s;
 }
 
 #quartz-root,
@@ -124,7 +240,7 @@ footer {
   z-index: 10;
 }
 
-.center article > * {
+.center article > :not(.qtb-firefly-layer) {
   position: relative;
   z-index: 12;
 }
@@ -353,52 +469,83 @@ body .right.sidebar {
   to { background-position: -1600px bottom; }
 }
 
-@keyframes qtbFireflyBloom {
-  0%, 18%, 42%, 100% {
-    opacity: 0.08;
+@keyframes qtbFireflyGlow {
+  0%, 10%, 36%, 100% {
+    opacity: 0;
+    transform: scale(0.6);
     box-shadow:
       0 0 0 rgba(255, 235, 140, 0),
       0 0 0 rgba(255, 235, 140, 0);
   }
 
-  22% {
-    opacity: 0.95;
+  15% {
+    opacity: 0.92;
+    transform: scale(1.25);
     box-shadow:
-      0 0 10px rgba(255, 235, 140, 0.85),
-      0 0 26px rgba(255, 235, 140, 0.55);
+      0 0 10px rgba(255, 235, 140, 0.9),
+      0 0 28px rgba(255, 235, 140, 0.55);
   }
 
-  24% {
-    opacity: 0.28;
-    box-shadow:
-      0 0 4px rgba(255, 235, 140, 0.35),
-      0 0 10px rgba(255, 235, 140, 0.2);
-  }
-
-  58% {
-    opacity: 0.82;
-    box-shadow:
-      0 0 8px rgba(255, 235, 140, 0.75),
-      0 0 20px rgba(255, 235, 140, 0.45);
-  }
-
-  60% {
+  21% {
     opacity: 0.18;
-    box-shadow:
-      0 0 2px rgba(255, 235, 140, 0.18),
-      0 0 6px rgba(255, 235, 140, 0.12);
+    transform: scale(0.8);
   }
+
+  48% {
+    opacity: 0.72;
+    transform: scale(1);
+    box-shadow:
+      0 0 8px rgba(255, 235, 140, 0.76),
+      0 0 22px rgba(255, 235, 140, 0.42);
+  }
+
+  56% {
+    opacity: 0.08;
+    transform: scale(0.65);
+  }
+}
+
+@keyframes qtbFireflyDriftA {
+  0% { translate: 0 0; }
+  28% { translate: 2.4vw -4.5vh; }
+  55% { translate: 5.8vw -1.4vh; }
+  78% { translate: 3vw 3.2vh; }
+  100% { translate: 6.4vw -2.2vh; }
+}
+
+@keyframes qtbFireflyDriftB {
+  0% { translate: 0 0; }
+  22% { translate: -2.8vw -2.2vh; }
+  49% { translate: 1.7vw -5vh; }
+  73% { translate: 4.5vw -1.2vh; }
+  100% { translate: 1vw 3.8vh; }
+}
+
+@keyframes qtbFireflyDriftC {
+  0% { translate: 0 0; }
+  20% { translate: 3.8vw 2.4vh; }
+  46% { translate: 1.2vw -3.5vh; }
+  70% { translate: -2.5vw -1.5vh; }
+  100% { translate: 2.6vw -4.2vh; }
+}
+
+@keyframes qtbFireflyDriftD {
+  0% { translate: 0 0; }
+  25% { translate: -1.6vw 3.6vh; }
+  52% { translate: 2.2vw 1.1vh; }
+  75% { translate: -3.8vw -2.8vh; }
+  100% { translate: 1.4vw -5.4vh; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
   body::after,
-  html::before,
-  html::after {
+  html::after,
+  .qtb-firefly {
     animation: none !important;
   }
 
-  html::before {
+  .qtb-firefly {
     opacity: 0.18;
     box-shadow: none;
   }
