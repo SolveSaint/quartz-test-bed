@@ -78,9 +78,7 @@ footer {
   z-index: 3;
 }
 
-/* Quartz 5 compact vertical layout port.
-   Quartz 5's default frame starts content much lower than the old customized v4 site.
-   These selectors pull the whole layout toward the viewport top without changing page existence or plugins. */
+/* Quartz 5 compact vertical layout port. */
 #quartz-root,
 #quartz-body,
 .page,
@@ -103,7 +101,7 @@ body > div > div {
 .center,
 main,
 article {
-  padding-top: clamp(0.45rem, 1.2vh, 0.9rem) !important;
+  padding-top: 20px !important;
   margin-top: 0 !important;
 }
 
@@ -114,29 +112,24 @@ article {
 }
 
 .left.sidebar,
-.left {
-  transform: translateY(-0.55rem);
-}
-
+.left,
 .right.sidebar,
 .right {
   transform: translateY(-0.55rem);
 }
 
-article > h1:first-child,
-article header,
-article .content-meta,
-article .page-meta {
-  margin-top: 0 !important;
+/* Homepage uses custom hero as the visible page title. Hide Quartz-generated article heading/meta. */
+.center article > h1:first-child,
+.center article > h1:first-child + p,
+.center article header,
+.center article .content-meta,
+.center article .page-meta,
+.center article [class*="meta"] {
+  display: none !important;
 }
 
-article > h1:first-child {
-  margin-bottom: 0.22rem !important;
-}
-
-.content-meta,
-.page-meta,
-article > p:first-of-type {
+.center article > .qtb-hero:first-child,
+.center article .qtb-hero:first-of-type {
   margin-top: 0 !important;
 }
 
