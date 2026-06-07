@@ -5,10 +5,12 @@ const HeaderImage: QuartzComponent = () => {
     <>
       <style>{`
         #quartz-root .center .page-header header {
-          margin-bottom: -3.0rem !important;
+          margin-bottom: -1.15rem !important;
         }
 
         #quartz-root .center .page-header .content-meta {
+          position: relative;
+          z-index: 5;
           margin-top: 0 !important;
           margin-bottom: 0.35rem !important;
         }
