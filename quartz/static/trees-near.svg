@@ -1,39 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" preserveAspectRatio="none">
   <rect width="1600" height="820" fill="none"/>
   <g>
-    <rect x="54" y="530" width="34" height="290" fill="#010805"/>
-    <polygon fill="#0a2f20" points="71,175 -30,520 172,520"/>
-    <polygon fill="#062015" points="71,330 -4,660 146,660"/>
-    <polygon fill="#03120c" points="71,475 18,770 124,770"/>
+    <rect x="82" y="650" width="34" height="170" fill="#010805"/>
+    <polygon fill="#0a2f20" points="99,260 -36,650 234,650"/>
 
-    <rect x="240" y="500" width="40" height="320" fill="#010805"/>
-    <polygon fill="#0b3624" points="260,120 146,496 374,496"/>
-    <polygon fill="#062216" points="260,300 176,668 344,668"/>
-    <polygon fill="#03120c" points="260,465 200,790 320,790"/>
+    <rect x="390" y="626" width="40" height="194" fill="#010805"/>
+    <polygon fill="#0b3624" points="410,200 258,626 562,626"/>
 
-    <rect x="492" y="545" width="32" height="275" fill="#010805"/>
-    <polygon fill="#092c1e" points="508,215 408,540 608,540"/>
-    <polygon fill="#061f15" points="508,360 434,666 582,666"/>
-    <polygon fill="#03120c" points="508,500 456,790 560,790"/>
+    <rect x="748" y="662" width="32" height="158" fill="#010805"/>
+    <polygon fill="#092c1e" points="764,315 632,662 896,662"/>
 
-    <rect x="712" y="515" width="38" height="305" fill="#010805"/>
-    <polygon fill="#0b3423" points="731,145 622,508 840,508"/>
-    <polygon fill="#062116" points="731,315 650,676 812,676"/>
-    <polygon fill="#03120c" points="731,478 674,798 788,798"/>
+    <rect x="1064" y="640" width="38" height="180" fill="#010805"/>
+    <polygon fill="#0b3423" points="1083,240 934,640 1232,640"/>
 
-    <rect x="970" y="535" width="36" height="285" fill="#010805"/>
-    <polygon fill="#0a3121" points="988,185 882,528 1094,528"/>
-    <polygon fill="#062015" points="988,342 910,672 1066,672"/>
-    <polygon fill="#03120c" points="988,490 934,794 1042,794"/>
-
-    <rect x="1210" y="505" width="42" height="315" fill="#010805"/>
-    <polygon fill="#0b3826" points="1231,105 1108,500 1354,500"/>
-    <polygon fill="#062317" points="1231,295 1140,680 1322,680"/>
-    <polygon fill="#03120c" points="1231,470 1168,800 1294,800"/>
-
-    <rect x="1480" y="540" width="34" height="280" fill="#010805"/>
-    <polygon fill="#0a3020" points="1497,205 1392,536 1602,536"/>
-    <polygon fill="#062015" points="1497,354 1420,672 1574,672"/>
-    <polygon fill="#03120c" points="1497,496 1444,792 1550,792"/>
+    <rect x="1432" y="660" width="36" height="160" fill="#010805"/>
+    <polygon fill="#0a3121" points="1450,300 1308,660 1592,660"/>
   </g>
 </svg>
