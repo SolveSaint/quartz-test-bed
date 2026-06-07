@@ -1,0 +1,40 @@
+name: Migrate to Quartz 5
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Overlay Quartz 5 from upstream
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add quartz-upstream https://github.com/jackyzha0/quartz.git
+          git fetch --depth 1 quartz-upstream main
+          git checkout FETCH_HEAD -- .
+          git checkout HEAD -- content || true
+          git checkout HEAD -- README.md || true
+          git checkout HEAD -- .github/workflows/deploy.yml || true
+          git checkout HEAD -- quartz/static || true
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('.github/workflows/deploy.yml')
+          if p.exists():
+              s = p.read_text()
+              s = s.replace('node quartz/bootstrap-cli.mjs build', 'npx quartz build')
+              p.write_text(s)
+          PY
+          git add -A
+          git commit -m "Migrate test bed to Quartz 5" || exit 0
+          git push
