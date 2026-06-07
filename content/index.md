@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Quartz Test Bed
 ---
 
 <div class="qtb-hero" role="img" aria-label="Quartz Test Bed forest banner">
