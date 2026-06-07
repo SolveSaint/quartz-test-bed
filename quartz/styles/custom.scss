@@ -28,102 +28,52 @@ body {
   background-attachment: fixed;
 }
 
-body::before,
-body::after,
-#quartz-root::before {
+/* Unified decorative background layer: stars, trees, fireflies, and future objects. */
+body::before {
   content: "";
   position: fixed;
   inset: 0;
-  pointer-events: none;
-}
-
-body::before {
   z-index: 0;
-  background-image: url("./static/stars-twinkle.svg");
-  background-repeat: repeat;
-  background-size: 1400px 900px;
-  opacity: 0.42;
-  animation: qtbStarPulse 5.5s ease-in-out infinite;
-  mask-image: linear-gradient(to bottom, black 0%, black 46%, transparent 74%);
-}
-
-body::after {
-  z-index: 1;
-  background-image:
-    url("./static/trees-row-front.svg"),
-    url("./static/trees-row-mid.svg"),
-    url("./static/trees-row-far.svg");
-  background-repeat: repeat-x, repeat-x, repeat-x;
-  background-size: 1600px 760px, 1800px 700px, 1900px 560px;
-  background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%;
-  animation: qtbForestParallax 180s linear infinite;
-}
-
-#quartz-root::before {
-  z-index: 2;
+  pointer-events: none;
   background-image:
     radial-gradient(circle, rgba(255,252,205,0.95) 0 2px, rgba(255,232,118,0.32) 3px, transparent 7px),
     radial-gradient(circle, rgba(255,252,205,0.85) 0 2px, rgba(255,232,118,0.28) 3px, transparent 7px),
     radial-gradient(circle, rgba(255,252,205,0.9) 0 2px, rgba(255,232,118,0.3) 3px, transparent 7px),
-    radial-gradient(circle, rgba(255,252,205,0.7) 0 2px, rgba(255,232,118,0.22) 3px, transparent 7px),
-    radial-gradient(circle, rgba(255,252,205,0.85) 0 2px, rgba(255,232,118,0.28) 3px, transparent 7px),
-    radial-gradient(circle, rgba(255,252,205,0.75) 0 2px, rgba(255,232,118,0.25) 3px, transparent 7px);
-  background-repeat: no-repeat;
-  background-size: 12px 12px, 10px 10px, 14px 14px, 11px 11px, 13px 13px, 10px 10px;
-  background-position: 11vw 52vh, 22vw 63vh, 39vw 70vh, 58vw 46vh, 76vw 43vh, 91vw 68vh;
-  opacity: 0.8;
-  filter: drop-shadow(0 0 8px rgba(255,235,140,0.55));
-  animation: qtbFireflyField 14s ease-in-out infinite alternate;
+    url("./static/trees-row-front.svg"),
+    url("./static/trees-row-mid.svg"),
+    url("./static/trees-row-far.svg"),
+    url("./static/stars-twinkle.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat-x, repeat;
+  background-size: 12px 12px, 10px 10px, 14px 14px, 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px;
+  background-position: 11vw 52vh, 39vw 70vh, 76vw 43vh, 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
+  filter: drop-shadow(0 0 8px rgba(255,235,140,0.45));
+  animation: qtbUnifiedBackground 180s linear infinite;
 }
 
+/* Keep all Quartz UI/content above the decorative background layer. */
 #quartz-root,
 #quartz-body,
 .page,
-.page[data-frame],
-.page[data-frame="default"],
-.page > #quartz-body,
 .left,
 .right,
 .center,
 main,
 article,
 footer {
+  position: relative !important;
+  z-index: 1 !important;
   background-color: transparent !important;
   background-image: none !important;
 }
 
-#quartz-root,
 #quartz-body,
-.page,
-.page > #quartz-body {
-  isolation: isolate !important;
-}
-
-.left,
-.right,
-.center,
-main,
-article,
-footer,
 .left > *,
 .right > *,
 .center > *,
 article > *,
 footer > * {
   position: relative !important;
-  z-index: 10 !important;
-}
-
-.qtb-hero,
-.qtb-block-title,
-article p,
-article hr,
-article ul,
-article ol,
-article blockquote,
-article table {
-  position: relative !important;
-  z-index: 20 !important;
+  z-index: 2 !important;
 }
 
 #quartz-root,
@@ -144,22 +94,37 @@ article {
   transform: none !important;
 }
 
+body .left,
+body .left.sidebar,
+body .center,
+body main,
+body .right,
+body .right.sidebar {
+  margin-top: var(--qtb-top-pad) !important;
+}
+
 .left.sidebar > *:first-child,
 .left > *:first-child,
 .right.sidebar > *:first-child,
 .right > *:first-child,
 .center > *:first-child,
 main > *:first-child,
-article > *:first-child { margin-top: 0 !important; }
+article > *:first-child {
+  margin-top: 0 !important;
+}
 
 .center article > h1:first-child,
 .center article header,
 .center article .content-meta,
 .center article .page-meta,
-.center article [class*="meta"] { display: none !important; }
+.center article [class*="meta"] {
+  display: none !important;
+}
 
 .center article > .qtb-hero:first-child,
-.center article .qtb-hero:first-of-type { margin-top: 0 !important; }
+.center article .qtb-hero:first-of-type {
+  margin-top: 0 !important;
+}
 
 .page-title,
 .left.sidebar .page-title,
@@ -185,11 +150,30 @@ article > *:first-child { margin-top: 0 !important; }
   text-shadow: none;
 }
 
+.page-title a {
+  font-size: 0 !important;
+  white-space: nowrap !important;
+}
+
+.page-title a::before {
+  content: "Quartz Test Bed";
+  display: inline-block;
+  font-size: 1.32rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: transparent;
+  background-image: linear-gradient(90deg, #e75563 0%, #f4f4f4 45%, #356bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 .search,
 .search > .search-button,
 button.search-button,
 .explorer,
-.graph { border-color: rgba(255,255,255,0.12) !important; }
+.graph {
+  border-color: rgba(255,255,255,0.12) !important;
+}
 
 .explorer button,
 .graph > h3,
@@ -200,8 +184,19 @@ button[aria-label*="explorer"] {
   font-weight: 800;
 }
 
+.qtb-hero,
+.qtb-block-title,
+article p,
+article hr,
+article ul,
+article ol,
+article blockquote,
+article table {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
 .qtb-hero {
-  position: relative;
   min-height: clamp(145px, 18vw, 230px);
   margin: 0 0 1.25rem 0;
   border-radius: 1rem;
@@ -280,11 +275,22 @@ button[aria-label*="explorer"] {
 }
 
 article p,
-article li { color: #e8eee9; }
-article hr { border-color: rgba(255,255,255,0.18); }
-footer { color: var(--qtb-muted); }
+article li {
+  color: #e8eee9;
+}
+
+article hr {
+  border-color: rgba(255,255,255,0.18);
+}
+
+footer {
+  color: var(--qtb-muted);
+}
+
 footer a,
-a { color: var(--qtb-blue); }
+a {
+  color: var(--qtb-blue);
+}
 
 .page,
 .page[data-frame="default"] {
@@ -293,109 +299,8 @@ a { color: var(--qtb-blue); }
 }
 
 .page[data-frame="default"] > #quartz-body,
-#quartz-body { padding-top: 0 !important; }
-
-.page-title a { font-size: 0 !important; white-space: nowrap !important; }
-.page-title a::before {
-  content: "Quartz Test Bed";
-  display: inline-block;
-  font-size: 1.32rem;
-  line-height: 1;
-  white-space: nowrap;
-  color: transparent;
-  background-image: linear-gradient(90deg, #e75563 0%, #f4f4f4 45%, #356bff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-body .left,
-body .left.sidebar,
-body .center,
-body main,
-body .right,
-body .right.sidebar { margin-top: var(--qtb-top-pad) !important; }
-
-@keyframes qtbStarPulse { 0%, 100% { opacity: 0.34; } 45% { opacity: 0.52; } }
-
-@keyframes qtbForestParallax {
-  from {
-    background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%;
-  }
-  to {
-    background-position: -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%;
-  }
-}
-
-@keyframes qtbFireflyField {
-  0% {
-    opacity: 0.15;
-    background-position: 11vw 52vh, 22vw 63vh, 39vw 70vh, 58vw 46vh, 76vw 43vh, 91vw 68vh;
-  }
-  45% { opacity: 0.9; }
-  100% {
-    opacity: 0.45;
-    background-position: 15vw 49vh, 18vw 68vh, 42vw 66vh, 61vw 50vh, 73vw 47vh, 88vw 64vh;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after,
-  #quartz-root::before { animation: none !important; }
-  #quartz-root::before { opacity: 0.18; }
-}
-
-/* Quartz Test Bed unified background override
-   Purpose: keep all decorative background objects in one pseudo-element layer.
-   This prevents trees/fireflies from stacking above Explorer, content, or future UI. */
-body::after,
-#quartz-root::before {
-  display: none !important;
-  content: none !important;
-  background-image: none !important;
-  animation: none !important;
-}
-
-body::before {
-  z-index: 0 !important;
-  opacity: 1 !important;
-  mask-image: none !important;
-  background-image:
-    radial-gradient(circle, rgba(255,252,205,0.95) 0 2px, rgba(255,232,118,0.32) 3px, transparent 7px),
-    radial-gradient(circle, rgba(255,252,205,0.85) 0 2px, rgba(255,232,118,0.28) 3px, transparent 7px),
-    radial-gradient(circle, rgba(255,252,205,0.9) 0 2px, rgba(255,232,118,0.3) 3px, transparent 7px),
-    url("./static/trees-row-front.svg"),
-    url("./static/trees-row-mid.svg"),
-    url("./static/trees-row-far.svg"),
-    url("./static/stars-twinkle.svg") !important;
-  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat-x, repeat !important;
-  background-size: 12px 12px, 10px 10px, 14px 14px, 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px !important;
-  background-position: 11vw 52vh, 39vw 70vh, 76vw 43vh, 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0 !important;
-  filter: drop-shadow(0 0 8px rgba(255,235,140,0.45));
-  animation: qtbUnifiedBackground 180s linear infinite !important;
-}
-
-#quartz-root,
-#quartz-body,
-.page,
-.left,
-.right,
-.center,
-main,
-article,
-footer {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-#quartz-body,
-.left > *,
-.right > *,
-.center > *,
-article > *,
-footer > * {
-  position: relative !important;
-  z-index: 2 !important;
+#quartz-body {
+  padding-top: 0 !important;
 }
 
 @keyframes qtbUnifiedBackground {
@@ -407,5 +312,11 @@ footer > * {
   }
   to {
     background-position: 15vw 49vh, 42vw 66vh, 73vw 47vh, -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%, -140px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none !important;
   }
 }
