@@ -38,7 +38,7 @@ html::before {
 
 body::before {
   z-index: 0;
-  background-image: url("../static/stars-twinkle.svg");
+  background-image: url("./static/stars-twinkle.svg");
   background-repeat: repeat;
   background-size: 1400px 900px;
   opacity: 0.42;
@@ -52,7 +52,7 @@ html::before {
   width: clamp(220px, 22vw, 440px);
   height: clamp(52px, 6vw, 100px);
   z-index: 3;
-  background-image: url("../static/roaming-animal.svg");
+  background-image: url("./static/roaming-animal.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -83,7 +83,7 @@ html::before {
 .qtb-bg-trees-far {
   z-index: 1;
   height: 64vh;
-  background-image: url("../static/trees-far.svg");
+  background-image: url("./static/trees-far.svg");
   background-size: 2200px 820px;
   opacity: 0.72;
   animation: qtbFarTreesScroll 260s linear infinite;
@@ -92,7 +92,7 @@ html::before {
 .qtb-bg-trees-near {
   z-index: 2;
   height: 78vh;
-  background-image: url("../static/trees-near.svg");
+  background-image: url("./static/trees-near.svg");
   background-size: 1600px 940px;
   opacity: 0.88;
   animation: qtbNearTreesScroll 120s linear infinite;
@@ -233,7 +233,7 @@ button[aria-label*="explorer"] {
   content: "";
   position: absolute;
   inset: 0 0 24%;
-  background-image: url("../static/trees-back.svg");
+  background-image: url("./static/trees-back.svg");
   background-size: 1100px 420px;
   background-repeat: repeat-x;
   background-position: center bottom;
