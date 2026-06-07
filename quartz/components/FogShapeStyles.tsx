@@ -18,24 +18,24 @@ const FogShapeStyles: QuartzComponent = () => {
         background-repeat: repeat-x, repeat-x, no-repeat, repeat-x, repeat-x, no-repeat, repeat-x, repeat-x, no-repeat, repeat !important;
         background-size:
           1600px 760px,
-          1700px 320px,
+          1700px 90vh,
           720px 220px,
           1800px 700px,
-          1900px 280px,
+          1900px 80vh,
           980px 280px,
           1900px 560px,
-          2200px 260px,
+          2200px 75vh,
           1200px 360px,
           1400px 900px !important;
         background-position:
           0 calc(100% + 24vh),
-          -12vw 62vh,
+          -12vw 10vh,
           70vw 70vh,
           0 calc(100% + 2vh),
-          8vw 55vh,
+          8vw 14vh,
           62vw 60vh,
           0 100%,
-          -18vw 47vh,
+          -18vw 8vh,
           20vw 46vh,
           0 0 !important;
         animation-name: qtbLayeredParallax;
