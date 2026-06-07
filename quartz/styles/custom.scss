@@ -51,7 +51,7 @@ body::before {
   animation: qtbLayeredParallax 240s linear infinite;
 }
 
-/* Oversized atmospheric fog: gradients live inside one large layer, moved by transform so no cloud edge can clip into view. */
+/* Oversized lower-forest fog: gradients live inside one large layer, moved by transform so no cloud edge can clip into view. */
 body::after {
   content: "";
   position: fixed;
@@ -59,21 +59,21 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(ellipse 32rem 15rem at 22% 28%, rgba(115,155,215,0.30), transparent 70%),
-    radial-gradient(ellipse 36rem 17rem at 72% 30%, rgba(90,135,205,0.24), transparent 72%),
-    radial-gradient(ellipse 34rem 16rem at 30% 66%, rgba(70,185,130,0.28), transparent 72%),
-    radial-gradient(ellipse 38rem 18rem at 68% 70%, rgba(74,170,130,0.22), transparent 74%),
-    radial-gradient(ellipse 28rem 14rem at 52% 54%, rgba(155,120,215,0.22), transparent 72%),
-    radial-gradient(ellipse 24rem 12rem at 18% 78%, rgba(142,110,200,0.18), transparent 74%),
-    radial-gradient(ellipse 28rem 12rem at 44% 22%, rgba(120,160,215,0.20), transparent 74%),
-    radial-gradient(ellipse 26rem 12rem at 82% 18%, rgba(74,150,125,0.17), transparent 74%),
-    radial-gradient(ellipse 22rem 10rem at 61% 48%, rgba(205,220,230,0.16), transparent 74%),
-    radial-gradient(ellipse 20rem 9rem at 26% 50%, rgba(190,210,205,0.13), transparent 74%);
+    radial-gradient(ellipse 34rem 14rem at 22% 56%, rgba(110,150,205,0.20), transparent 72%),
+    radial-gradient(ellipse 38rem 15rem at 72% 58%, rgba(90,135,205,0.16), transparent 74%),
+    radial-gradient(ellipse 36rem 15rem at 30% 70%, rgba(70,175,125,0.20), transparent 74%),
+    radial-gradient(ellipse 40rem 17rem at 68% 76%, rgba(74,165,125,0.16), transparent 76%),
+    radial-gradient(ellipse 28rem 12rem at 52% 66%, rgba(145,115,195,0.12), transparent 74%),
+    radial-gradient(ellipse 24rem 10rem at 18% 80%, rgba(130,105,180,0.10), transparent 76%),
+    radial-gradient(ellipse 28rem 11rem at 44% 50%, rgba(120,160,205,0.12), transparent 76%),
+    radial-gradient(ellipse 26rem 10rem at 82% 48%, rgba(74,145,120,0.10), transparent 76%),
+    radial-gradient(ellipse 24rem 9rem at 61% 64%, rgba(205,220,220,0.11), transparent 76%),
+    radial-gradient(ellipse 22rem 9rem at 26% 62%, rgba(190,210,200,0.10), transparent 76%);
   background-repeat: no-repeat;
   mix-blend-mode: screen;
-  opacity: 1;
+  opacity: 0.72;
   filter: blur(4px);
-  animation: qtbFogDrift 150s ease-in-out infinite alternate;
+  animation: qtbFogDrift 170s ease-in-out infinite alternate;
 }
 
 #quartz-root,
@@ -351,15 +351,15 @@ a {
 
 @keyframes qtbFogDrift {
   0% {
-    opacity: 0.72;
+    opacity: 0.48;
     transform: translate3d(-2vw, -1vh, 0) scale(1.02);
   }
   48% {
-    opacity: 1;
+    opacity: 0.72;
     transform: translate3d(2vw, 1vh, 0) scale(1.04);
   }
   100% {
-    opacity: 0.78;
+    opacity: 0.54;
     transform: translate3d(5vw, 2vh, 0) scale(1.02);
   }
 }
@@ -387,14 +387,14 @@ a {
 }
 
 @keyframes qtbFireflyShadowField {
-  0%, 100% { box-shadow: 20vw 55vh 7px 2px rgba(255,252,205,0), 34vw 69vh 6px 2px rgba(255,252,205,0), 51vw 47vh 7px 2px rgba(255,252,205,0), 67vw 63vh 5px 2px rgba(255,252,205,0), 83vw 52vh 6px 2px rgba(255,252,205,0), 27vw 45vh 5px 2px rgba(255,252,205,0), 73vw 72vh 8px 2px rgba(255,252,205,0); }
-  9% { box-shadow: 20.6vw 54.5vh 7px 2px rgba(255,252,205,0.18), 34vw 69vh 6px 2px rgba(255,252,205,0), 51vw 47vh 7px 2px rgba(255,252,205,0), 67vw 63vh 5px 2px rgba(255,252,205,0), 83vw 52vh 6px 2px rgba(255,252,205,0), 27.4vw 44.7vh 5px 2px rgba(255,252,205,0.08), 73vw 72vh 8px 2px rgba(255,252,205,0); }
-  13% { box-shadow: 21.5vw 53.6vh 10px 3px rgba(255,252,205,0.9), 34vw 69vh 6px 2px rgba(255,252,205,0), 51vw 47vh 7px 2px rgba(255,252,205,0), 67vw 63vh 5px 2px rgba(255,252,205,0), 83vw 52vh 6px 2px rgba(255,252,205,0), 28vw 44.2vh 6px 2px rgba(255,252,205,0.28), 73vw 72vh 8px 2px rgba(255,252,205,0); }
-  18% { box-shadow: 22.2vw 53vh 7px 2px rgba(255,252,205,0.04), 34.5vw 68.6vh 6px 2px rgba(255,252,205,0.12), 51vw 47vh 7px 2px rgba(255,252,205,0), 67vw 63vh 5px 2px rgba(255,252,205,0), 83.5vw 51.6vh 6px 2px rgba(255,252,205,0.05), 28.4vw 43.8vh 5px 2px rgba(255,252,205,0), 73vw 72vh 8px 2px rgba(255,252,205,0); }
-  27% { box-shadow: 22vw 53vh 7px 2px rgba(255,252,205,0), 35.7vw 67.4vh 9px 3px rgba(255,252,205,0.82), 51vw 47vh 7px 2px rgba(255,252,205,0), 67vw 63vh 5px 2px rgba(255,252,205,0), 84.1vw 50.9vh 7px 2px rgba(255,252,205,0.22), 28vw 44vh 5px 2px rgba(255,252,205,0), 73vw 72vh 8px 2px rgba(255,252,205,0); }
-  35% { box-shadow: 21vw 54vh 7px 2px rgba(255,252,205,0), 36.4vw 67vh 6px 2px rgba(255,252,205,0.05), 52.5vw 46.2vh 10px 3px rgba(255,252,205,0.95), 67vw 63vh 5px 2px rgba(255,252,205,0), 84vw 51vh 6px 2px rgba(255,252,205,0), 27vw 45vh 5px 2px rgba(255,252,205,0), 73.7vw 70.8vh 8px 2px rgba(255,252,205,0.25); }
-  48% { box-shadow: 20vw 55vh 7px 2px rgba(255,252,205,0), 36vw 68vh 6px 2px rgba(255,252,205,0), 53.2vw 45.8vh 7px 2px rgba(255,252,205,0.08), 68.8vw 61.8vh 8px 2px rgba(255,252,205,0.75), 83vw 52vh 6px 2px rgba(255,252,205,0), 27vw 45vh 5px 2px rgba(255,252,205,0), 74vw 70vh 6px 2px rgba(255,252,205,0.05); }
-  64% { box-shadow: 19.4vw 56.2vh 7px 2px rgba(255,252,205,0.2), 35vw 69vh 6px 2px rgba(255,252,205,0), 52vw 47vh 7px 2px rgba(255,252,205,0), 69.6vw 61.2vh 5px 2px rgba(255,252,205,0.04), 81.5vw 55vh 10px 3px rgba(255,252,205,0.9), 27vw 45vh 5px 2px rgba(255,252,205,0), 73vw 72vh 8px 2px rgba(255,252,205,0); }
-  82% { box-shadow: 19vw 57vh 7px 2px rgba(255,252,205,0), 33.5vw 71vh 7px 2px rgba(255,252,205,0.18), 51vw 47vh 7px 2px rgba(255,252,205,0), 67vw 63vh 5px 2px rgba(255,252,205,0), 82vw 54vh 6px 2px rgba(255,252,205,0.06), 29vw 43vh 8px 2px rgba(255,252,205,0.86), 73vw 72vh 8px 2px rgba(255,252,205,0); }
-  92% { box-shadow: 20vw 55vh 7px 2px rgba(255,252,205,0), 34vw 69vh 6px 2px rgba(255,252,205,0), 51vw 47vh 7px 2px rgba(255,252,205,0), 67vw 63vh 5px 2px rgba(255,252,205,0), 83vw 52vh 6px 2px rgba(255,252,205,0), 29.5vw 42.6vh 5px 2px rgba(255,252,205,0.08), 72.4vw 72.8vh 10px 3px rgba(255,252,205,0.78); }
+  0%, 100% { box-shadow: 20vw 55vh 7px 2px rgba(255,225,85,0), 34vw 69vh 6px 2px rgba(255,225,85,0), 51vw 47vh 7px 2px rgba(255,225,85,0), 67vw 63vh 5px 2px rgba(255,225,85,0), 83vw 52vh 6px 2px rgba(255,225,85,0), 27vw 45vh 5px 2px rgba(255,225,85,0), 73vw 72vh 8px 2px rgba(255,225,85,0); }
+  9% { box-shadow: 20.6vw 54.5vh 7px 2px rgba(255,225,85,0.18), 34vw 69vh 6px 2px rgba(255,225,85,0), 51vw 47vh 7px 2px rgba(255,225,85,0), 67vw 63vh 5px 2px rgba(255,225,85,0), 83vw 52vh 6px 2px rgba(255,225,85,0), 27.4vw 44.7vh 5px 2px rgba(255,225,85,0.08), 73vw 72vh 8px 2px rgba(255,225,85,0); }
+  13% { box-shadow: 21.5vw 53.6vh 10px 3px rgba(255,225,85,0.9), 34vw 69vh 6px 2px rgba(255,225,85,0), 51vw 47vh 7px 2px rgba(255,225,85,0), 67vw 63vh 5px 2px rgba(255,225,85,0), 83vw 52vh 6px 2px rgba(255,225,85,0), 28vw 44.2vh 6px 2px rgba(255,225,85,0.28), 73vw 72vh 8px 2px rgba(255,225,85,0); }
+  18% { box-shadow: 22.2vw 53vh 7px 2px rgba(255,225,85,0.04), 34.5vw 68.6vh 6px 2px rgba(255,225,85,0.12), 51vw 47vh 7px 2px rgba(255,225,85,0), 67vw 63vh 5px 2px rgba(255,225,85,0), 83.5vw 51.6vh 6px 2px rgba(255,225,85,0.05), 28.4vw 43.8vh 5px 2px rgba(255,225,85,0), 73vw 72vh 8px 2px rgba(255,225,85,0); }
+  27% { box-shadow: 22vw 53vh 7px 2px rgba(255,225,85,0), 35.7vw 67.4vh 9px 3px rgba(255,225,85,0.82), 51vw 47vh 7px 2px rgba(255,225,85,0), 67vw 63vh 5px 2px rgba(255,225,85,0), 84.1vw 50.9vh 7px 2px rgba(255,225,85,0.22), 28vw 44vh 5px 2px rgba(255,225,85,0), 73vw 72vh 8px 2px rgba(255,225,85,0); }
+  35% { box-shadow: 21vw 54vh 7px 2px rgba(255,225,85,0), 36.4vw 67vh 6px 2px rgba(255,225,85,0.05), 52.5vw 46.2vh 10px 3px rgba(255,225,85,0.95), 67vw 63vh 5px 2px rgba(255,225,85,0), 84vw 51vh 6px 2px rgba(255,225,85,0), 27vw 45vh 5px 2px rgba(255,225,85,0), 73.7vw 70.8vh 8px 2px rgba(255,225,85,0.25); }
+  48% { box-shadow: 20vw 55vh 7px 2px rgba(255,225,85,0), 36vw 68vh 6px 2px rgba(255,225,85,0), 53.2vw 45.8vh 7px 2px rgba(255,225,85,0.08), 68.8vw 61.8vh 8px 2px rgba(255,225,85,0.75), 83vw 52vh 6px 2px rgba(255,225,85,0), 27vw 45vh 5px 2px rgba(255,225,85,0), 74vw 70vh 6px 2px rgba(255,225,85,0.05); }
+  64% { box-shadow: 19.4vw 56.2vh 7px 2px rgba(255,225,85,0.2), 35vw 69vh 6px 2px rgba(255,225,85,0), 52vw 47vh 7px 2px rgba(255,225,85,0), 69.6vw 61.2vh 5px 2px rgba(255,225,85,0.04), 81.5vw 55vh 10px 3px rgba(255,225,85,0.9), 27vw 45vh 5px 2px rgba(255,225,85,0), 73vw 72vh 8px 2px rgba(255,225,85,0); }
+  82% { box-shadow: 19vw 57vh 7px 2px rgba(255,225,85,0), 33.5vw 71vh 7px 2px rgba(255,225,85,0.18), 51vw 47vh 7px 2px rgba(255,225,85,0), 67vw 63vh 5px 2px rgba(255,225,85,0), 82vw 54vh 6px 2px rgba(255,225,85,0.06), 29vw 43vh 8px 2px rgba(255,225,85,0.86), 73vw 72vh 8px 2px rgba(255,225,85,0); }
+  92% { box-shadow: 20vw 55vh 7px 2px rgba(255,225,85,0), 34vw 69vh 6px 2px rgba(255,225,85,0), 51vw 47vh 7px 2px rgba(255,225,85,0), 67vw 63vh 5px 2px rgba(255,225,85,0), 83vw 52vh 6px 2px rgba(255,225,85,0), 29.5vw 42.6vh 5px 2px rgba(255,225,85,0.08), 72.4vw 72.8vh 10px 3px rgba(255,225,85,0.78); }
 }
