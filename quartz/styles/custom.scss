@@ -51,45 +51,51 @@ body::before {
   animation: qtbLayeredParallax 240s linear infinite;
 }
 
-/* Full-screen atmospheric fog. Irregular radial fields only, no horizontal bands. */
+/* Visible atmospheric fog: irregular clouds and wisps only, no bands. */
 body::after {
   content: "";
   position: fixed;
-  inset: -14vh -12vw;
+  inset: -10vh -10vw;
   z-index: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(ellipse at 14% 34%, rgba(107,132,166,0.18), transparent 24rem),
-    radial-gradient(ellipse at 82% 42%, rgba(96,124,158,0.14), transparent 28rem),
-    radial-gradient(ellipse at 31% 72%, rgba(65,142,116,0.16), transparent 25rem),
-    radial-gradient(ellipse at 76% 76%, rgba(66,154,121,0.12), transparent 31rem),
-    radial-gradient(ellipse at 54% 58%, rgba(134,112,184,0.11), transparent 22rem),
-    radial-gradient(ellipse at 8% 84%, rgba(132,108,178,0.09), transparent 18rem),
-    radial-gradient(ellipse at 46% 27%, rgba(111,145,181,0.12), transparent 20rem),
-    radial-gradient(ellipse at 93% 18%, rgba(74,139,118,0.10), transparent 19rem);
+    radial-gradient(ellipse at 14% 34%, rgba(115,155,215,0.34), transparent 18rem),
+    radial-gradient(ellipse at 82% 42%, rgba(90,135,205,0.28), transparent 22rem),
+    radial-gradient(ellipse at 31% 72%, rgba(70,185,130,0.30), transparent 19rem),
+    radial-gradient(ellipse at 76% 76%, rgba(74,170,130,0.25), transparent 24rem),
+    radial-gradient(ellipse at 54% 58%, rgba(155,120,215,0.25), transparent 17rem),
+    radial-gradient(ellipse at 8% 84%, rgba(142,110,200,0.22), transparent 16rem),
+    radial-gradient(ellipse at 46% 27%, rgba(120,160,215,0.24), transparent 18rem),
+    radial-gradient(ellipse at 93% 18%, rgba(74,150,125,0.20), transparent 17rem),
+    radial-gradient(ellipse at 64% 50%, rgba(205,220,230,0.18), transparent 14rem),
+    radial-gradient(ellipse at 22% 50%, rgba(190,210,205,0.15), transparent 13rem);
   background-repeat: no-repeat;
   background-size:
-    82rem 36rem,
-    94rem 42rem,
-    78rem 34rem,
-    100rem 46rem,
-    68rem 30rem,
-    58rem 28rem,
-    66rem 26rem,
-    56rem 24rem;
+    42rem 22rem,
+    50rem 24rem,
+    42rem 22rem,
+    54rem 25rem,
+    38rem 19rem,
+    34rem 18rem,
+    40rem 18rem,
+    34rem 17rem,
+    30rem 14rem,
+    28rem 13rem;
   background-position:
-    -6vw 10vh,
-    48vw 18vh,
-    8vw 54vh,
-    52vw 60vh,
-    28vw 38vh,
-    -8vw 70vh,
-    30vw 8vh,
-    76vw 0;
+    0 16vh,
+    54vw 18vh,
+    8vw 52vh,
+    52vw 62vh,
+    34vw 40vh,
+    -4vw 70vh,
+    28vw 8vh,
+    76vw 4vh,
+    48vw 50vh,
+    14vw 46vh;
   mix-blend-mode: screen;
-  opacity: 0.95;
-  filter: blur(8px);
-  animation: qtbFogDrift 160s ease-in-out infinite alternate;
+  opacity: 1;
+  filter: blur(4px);
+  animation: qtbFogDrift 150s ease-in-out infinite alternate;
 }
 
 #quartz-root,
@@ -367,29 +373,33 @@ a {
 
 @keyframes qtbFogDrift {
   0% {
-    opacity: 0.58;
+    opacity: 0.72;
     background-position:
-      -6vw 10vh,
-      48vw 18vh,
-      8vw 54vh,
-      52vw 60vh,
-      28vw 38vh,
-      -8vw 70vh,
-      30vw 8vh,
-      76vw 0;
+      0 16vh,
+      54vw 18vh,
+      8vw 52vh,
+      52vw 62vh,
+      34vw 40vh,
+      -4vw 70vh,
+      28vw 8vh,
+      76vw 4vh,
+      48vw 50vh,
+      14vw 46vh;
   }
-  45% { opacity: 0.74; }
+  48% { opacity: 1; }
   100% {
-    opacity: 0.64;
+    opacity: 0.78;
     background-position:
-      4vw 14vh,
-      40vw 15vh,
-      15vw 58vh,
-      44vw 65vh,
-      35vw 34vh,
-      -2vw 74vh,
-      22vw 11vh,
-      70vw 4vh;
+      10vw 18vh,
+      44vw 15vh,
+      18vw 56vh,
+      44vw 66vh,
+      42vw 36vh,
+      2vw 74vh,
+      20vw 11vh,
+      68vw 8vh,
+      42vw 54vh,
+      22vw 48vh;
   }
 }
 
