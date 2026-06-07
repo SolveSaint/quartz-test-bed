@@ -43,7 +43,7 @@ jobs:
         run: npx quartz plugin install --latest -c 1
 
       - name: Build Quartz
-        run: npx quartz build -c 1
+        run: npx quartz build -c 1 --baseDir quartz-test-bed
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
