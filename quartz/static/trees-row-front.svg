@@ -11,4 +11,25 @@
     <rect x="1238" y="664" width="32" height="176" fill="#010805"/><polygon fill="#0a3121" points="1254,325 1138,664 1370,664"/>
     <rect x="1390" y="620" width="40" height="220" fill="#010805"/><polygon fill="#0b3423" points="1410,150 1264,620 1556,620"/>
   </g>
+  <g opacity="0.95">
+    <path d="M160 792c14-22 34-31 58-28 21 3 34 15 43 33-31-6-66-4-101-5z" fill="#d46a22"/>
+    <path d="M166 801c26-8 60-8 91 0" stroke="#f3a14a" stroke-width="5" fill="none" opacity="0.75"/>
+    <path d="M1094 790c13-18 32-25 54-23 18 2 31 12 39 27-27-5-59-4-93-4z" fill="#c85f1f"/>
+    <path d="M1099 799c25-7 54-7 82 0" stroke="#f2a247" stroke-width="4" fill="none" opacity="0.7"/>
+  </g>
+  <g opacity="0.85">
+    <ellipse cx="435" cy="792" rx="42" ry="13" fill="#d8d2bb"/><ellipse cx="439" cy="790" rx="34" ry="9" fill="#6f6a5a" opacity="0.38"/>
+    <ellipse cx="470" cy="806" rx="34" ry="10" fill="#cbc5ad"/><ellipse cx="473" cy="805" rx="27" ry="7" fill="#6f6a5a" opacity="0.35"/>
+    <ellipse cx="1285" cy="790" rx="38" ry="12" fill="#d7d0b8"/><ellipse cx="1287" cy="789" rx="30" ry="8" fill="#6f6a5a" opacity="0.35"/>
+  </g>
+  <g opacity="0.92">
+    <path d="M655 812c-10-28 2-54 19-57 16 4 26 31 13 57z" fill="#b68d54"/><path d="M663 766c4-4 15-4 20 1" stroke="#e2c47b" stroke-width="3"/><path d="M660 778c7-3 19-2 27 2" stroke="#e2c47b" stroke-width="3"/><path d="M659 791c9-4 22-2 31 2" stroke="#e2c47b" stroke-width="3"/>
+    <path d="M992 814c-9-26 1-50 17-54 15 4 25 29 12 54z" fill="#b78f56"/><path d="M999 771c5-3 14-3 19 1" stroke="#e2c47b" stroke-width="3"/><path d="M996 784c8-3 19-2 26 2" stroke="#e2c47b" stroke-width="3"/>
+  </g>
+  <g opacity="0.9">
+    <rect x="820" y="800" width="7" height="22" rx="3" fill="#d8c7a5"/><path d="M807 802c6-15 28-16 38 0-12 7-26 8-38 0z" fill="#5f76aa"/><circle cx="818" cy="798" r="2" fill="#dbe6ff" opacity="0.55"/>
+    <rect x="848" y="806" width="6" height="18" rx="3" fill="#d8c7a5"/><path d="M838 808c6-12 23-13 30 0-10 6-20 6-30 0z" fill="#4d679e"/>
+    <rect x="320" y="805" width="6" height="18" rx="3" fill="#d8c7a5"/><path d="M310 807c5-12 24-13 31 0-10 6-21 6-31 0z" fill="#526da6"/>
+  </g>
+  <path d="M0 822h1600v18H0z" fill="#020805" opacity="0.72"/>
 </svg>
