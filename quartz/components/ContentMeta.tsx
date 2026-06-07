@@ -28,8 +28,9 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
     if (text) {
       const segments: (string | JSX.Element)[] = []
+      const showDate = fileData.frontmatter?.showdate !== false
 
-      if (fileData.dates) {
+      if (fileData.dates && showDate) {
         segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
       }
 
@@ -40,6 +41,10 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
           minutes: Math.ceil(minutes),
         })
         segments.push(<span>{displayedTime}</span>)
+      }
+
+      if (segments.length === 0) {
+        return null
       }
 
       return (
