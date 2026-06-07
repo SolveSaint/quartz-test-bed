@@ -12,4 +12,5 @@ html body:after {
     url("/quartz-test-bed/static/fog-wisps-far.svg"),
     url("/quartz-test-bed/static/stars-twinkle.svg") !important;
   background-repeat: repeat-x !important;
+  background-size: auto 100% !important;
 }
