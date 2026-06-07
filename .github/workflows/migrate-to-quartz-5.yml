@@ -20,20 +20,17 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote add quartz-upstream https://github.com/jackyzha0/quartz.git
-          git fetch --depth 1 quartz-upstream main
+          git remote add quartz-upstream https://github.com/jackyzha0/quartz.git || true
+          git fetch --depth 1 quartz-upstream v5
           git checkout FETCH_HEAD -- .
-          git checkout HEAD -- content || true
-          git checkout HEAD -- README.md || true
-          git checkout HEAD -- .github/workflows/deploy.yml || true
-          git checkout HEAD -- quartz/static || true
+          git restore --source=HEAD -- content README.md .github/workflows/deploy.yml quartz/static || true
           python3 - <<'PY'
           from pathlib import Path
           p = Path('.github/workflows/deploy.yml')
           if p.exists():
-              s = p.read_text()
-              s = s.replace('node quartz/bootstrap-cli.mjs build', 'npx quartz build')
-              p.write_text(s)
+              text = p.read_text()
+              text = text.replace('node quartz/bootstrap-cli.mjs build', 'npx quartz build')
+              p.write_text(text)
           PY
           git add -A
           git commit -m "Migrate test bed to Quartz 5" || exit 0
