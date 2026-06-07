@@ -320,3 +320,19 @@ a {
     animation: none !important;
   }
 }
+
+#quartz-root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,252,205,1) 0 2px, transparent 7px) 20vw 55vh / 12px 12px no-repeat;
+  animation: qtbFireflyFade 8s ease-in-out infinite alternate;
+}
+
+@keyframes qtbFireflyFade {
+  from { opacity: 0.05; }
+  45% { opacity: 1; }
+  to { opacity: 0.2; }
+}
