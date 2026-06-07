@@ -1,7 +1,7 @@
 import { QuartzComponent, QuartzComponentConstructor } from "./types"
 
 const FogShapeStyles: QuartzComponent = () => {
-  return <link rel="stylesheet" href="/quartz-test-bed/static/fog-reset.css" />
+  return <style>{`@import url("/quartz-test-bed/static/fog-reset.css");`}</style>
 }
 
 export default (() => FogShapeStyles) satisfies QuartzComponentConstructor
