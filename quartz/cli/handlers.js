@@ -193,6 +193,11 @@ export async function handleBuild(argv) {
 
   if (argv.watch) {
     chokidar.watch(".", { ignoreInitial: true }).on("all", async () => build(clientRefresh))
+  } else {
+    if (cleanupBuild) {
+      await cleanupBuild()
+    }
+    await ctx.dispose()
   }
 }
 
