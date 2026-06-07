@@ -23,7 +23,8 @@ jobs:
           git remote add quartz-upstream https://github.com/jackyzha0/quartz.git || true
           git fetch --depth 1 quartz-upstream v5
           git checkout FETCH_HEAD -- .
-          git restore --source=HEAD -- content README.md .github/workflows/deploy.yml quartz/static || true
+          rm -rf .github/workflows
+          git restore --source=HEAD -- content README.md quartz/static .github/workflows || true
           python3 - <<'PY'
           from pathlib import Path
           p = Path('.github/workflows/deploy.yml')
