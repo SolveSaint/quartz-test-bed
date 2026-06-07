@@ -1,10 +1,11 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import FogShapeStyles from "./quartz/components/FogShapeStyles"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [Component.HeaderImage()],
+  header: [FogShapeStyles(), Component.HeaderImage()],
   afterBody: [Component.Postscript()],
   footer: Component.Footer({
     links: {
