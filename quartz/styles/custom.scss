@@ -27,9 +27,7 @@ body {
 }
 
 body::before,
-body::after,
-html::before,
-html::after {
+html::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -44,17 +42,6 @@ body::before {
   opacity: 0.42;
   animation: qtbStarPulse 5.5s ease-in-out infinite;
   mask-image: linear-gradient(to bottom, black 0%, black 46%, transparent 74%);
-}
-
-body::after {
-  z-index: 1;
-  background-image: url("../static/trees-far.svg");
-  background-repeat: repeat-x;
-  background-size: 2300px 1050px;
-  background-position: 0 bottom;
-  opacity: 0.62;
-  animation: qtbFarTreesScroll 260s linear infinite;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 100%);
 }
 
 html::before {
@@ -72,15 +59,41 @@ html::before {
   animation: qtbAnimalPatrol 80s ease-in-out infinite;
 }
 
-html::after {
-  z-index: 2;
-  background-image: url("../static/trees-near.svg");
+.qtb-bg-layers {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.qtb-bg-trees {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70vh;
   background-repeat: repeat-x;
-  background-size: 1650px 1000px;
   background-position: 0 bottom;
-  opacity: 0.76;
-  animation: qtbNearTreesScroll 130s linear infinite;
-  mask-image: linear-gradient(to bottom, transparent 0%, transparent 18%, black 42%, black 100%);
+  will-change: background-position;
+}
+
+.qtb-bg-trees-far {
+  z-index: 1;
+  height: 64vh;
+  background-image: url("../static/trees-far.svg");
+  background-size: 2200px 800px;
+  opacity: 0.45;
+  animation: qtbFarTreesScroll 260s linear infinite;
+}
+
+.qtb-bg-trees-near {
+  z-index: 2;
+  height: 74vh;
+  background-image: url("../static/trees-near.svg");
+  background-size: 1600px 900px;
+  opacity: 0.65;
+  animation: qtbNearTreesScroll 120s linear infinite;
 }
 
 #quartz-root,
@@ -92,6 +105,11 @@ article,
 footer {
   position: relative;
   z-index: 3;
+}
+
+.center article > :not(.qtb-bg-layers) {
+  position: relative;
+  z-index: 4;
 }
 
 #quartz-root,
@@ -310,12 +328,12 @@ body .right.sidebar {
 
 @keyframes qtbFarTreesScroll {
   from { background-position: 0 bottom; }
-  to { background-position: -2300px bottom; }
+  to { background-position: -2200px bottom; }
 }
 
 @keyframes qtbNearTreesScroll {
   from { background-position: 0 bottom; }
-  to { background-position: -1650px bottom; }
+  to { background-position: -1600px bottom; }
 }
 
 @keyframes qtbAnimalPatrol {
@@ -327,9 +345,8 @@ body .right.sidebar {
 
 @media (prefers-reduced-motion: reduce) {
   body::before,
-  body::after,
   html::before,
-  html::after {
+  .qtb-bg-trees {
     animation: none !important;
   }
 }
