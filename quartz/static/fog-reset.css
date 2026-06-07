@@ -1,3 +1,14 @@
 html body:before {
   opacity: 0 !important;
 }
+
+html body:after {
+  background-image:
+    url("/quartz-test-bed/static/trees-row-front.svg"),
+    url("/quartz-test-bed/static/fog-wisps-near.svg"),
+    url("/quartz-test-bed/static/trees-row-mid.svg"),
+    url("/quartz-test-bed/static/fog-wisps-mid.svg"),
+    url("/quartz-test-bed/static/trees-row-far.svg"),
+    url("/quartz-test-bed/static/fog-wisps-far.svg"),
+    url("/quartz-test-bed/static/stars-twinkle.svg") !important;
+}
