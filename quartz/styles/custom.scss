@@ -78,6 +78,68 @@ footer {
   z-index: 3;
 }
 
+/* Quartz 5 compact vertical layout port.
+   Quartz 5's default frame starts content much lower than the old customized v4 site.
+   These selectors pull the whole layout toward the viewport top without changing page existence or plugins. */
+#quartz-root,
+#quartz-body,
+.page,
+.page > #quartz-body,
+body > div,
+body > div > div {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+#quartz-body {
+  align-items: flex-start !important;
+  min-height: 100vh;
+}
+
+.left.sidebar,
+.right.sidebar,
+.left,
+.right,
+.center,
+main,
+article {
+  padding-top: clamp(0.45rem, 1.2vh, 0.9rem) !important;
+  margin-top: 0 !important;
+}
+
+.center,
+main,
+article {
+  transform: translateY(-1.25rem);
+}
+
+.left.sidebar,
+.left {
+  transform: translateY(-0.55rem);
+}
+
+.right.sidebar,
+.right {
+  transform: translateY(-0.55rem);
+}
+
+article > h1:first-child,
+article header,
+article .content-meta,
+article .page-meta {
+  margin-top: 0 !important;
+}
+
+article > h1:first-child {
+  margin-bottom: 0.22rem !important;
+}
+
+.content-meta,
+.page-meta,
+article > p:first-of-type {
+  margin-top: 0 !important;
+}
+
 /* Site title and side controls */
 .page-title,
 .left.sidebar .page-title,
