@@ -1,19 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 820" preserveAspectRatio="none">
-  <rect width="1600" height="820" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" preserveAspectRatio="none">
+  <rect width="1600" height="840" fill="none"/>
   <g>
-    <rect x="92" y="660" width="24" height="160" fill="#010805"/>
-    <polygon fill="#0a2f20" points="104,325 -32,660 240,660"/>
-
-    <rect x="402" y="640" width="28" height="180" fill="#010805"/>
-    <polygon fill="#0b3624" points="416,275 268,640 564,640"/>
-
-    <rect x="758" y="670" width="24" height="150" fill="#010805"/>
-    <polygon fill="#092c1e" points="770,390 648,670 892,670"/>
-
-    <rect x="1076" y="652" width="26" height="168" fill="#010805"/>
-    <polygon fill="#0b3423" points="1089,335 954,652 1224,652"/>
-
-    <rect x="1444" y="670" width="24" height="150" fill="#010805"/>
-    <polygon fill="#0a3121" points="1456,385 1330,670 1582,670"/>
+    <rect x="-18" y="610" width="40" height="230" fill="#010805"/><polygon fill="#092c1e" points="2,105 -178,610 182,610"/>
+    <rect x="154" y="640" width="34" height="200" fill="#010805"/><polygon fill="#0a2f20" points="171,205 18,640 324,640"/>
+    <rect x="334" y="594" width="44" height="246" fill="#010805"/><polygon fill="#0b3624" points="356,58 154,594 558,594"/>
+    <rect x="560" y="650" width="34" height="190" fill="#010805"/><polygon fill="#092c1e" points="577,245 422,650 732,650"/>
+    <rect x="736" y="616" width="40" height="224" fill="#010805"/><polygon fill="#0b3423" points="756,130 574,616 938,616"/>
+    <rect x="948" y="642" width="34" height="198" fill="#010805"/><polygon fill="#0a3121" points="965,210 806,642 1124,642"/>
+    <rect x="1136" y="598" width="44" height="242" fill="#010805"/><polygon fill="#0b3624" points="1158,70 954,598 1362,598"/>
+    <rect x="1368" y="646" width="34" height="194" fill="#010805"/><polygon fill="#092c1e" points="1385,232 1232,646 1538,646"/>
+    <rect x="1542" y="620" width="38" height="220" fill="#010805"/><polygon fill="#0a3020" points="1561,140 1386,620 1736,620"/>
   </g>
 </svg>
