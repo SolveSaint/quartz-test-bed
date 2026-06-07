@@ -51,13 +51,45 @@ body::before {
   animation: qtbLayeredParallax 240s linear infinite;
 }
 
+/* Full-screen atmospheric fog. Irregular radial fields only, no horizontal bands. */
 body::after {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -14vh -12vw;
   z-index: 0;
   pointer-events: none;
-  background: transparent;
+  background-image:
+    radial-gradient(ellipse at 14% 34%, rgba(107,132,166,0.075), transparent 24rem),
+    radial-gradient(ellipse at 82% 42%, rgba(96,124,158,0.055), transparent 28rem),
+    radial-gradient(ellipse at 31% 72%, rgba(65,142,116,0.070), transparent 25rem),
+    radial-gradient(ellipse at 76% 76%, rgba(66,154,121,0.050), transparent 31rem),
+    radial-gradient(ellipse at 54% 58%, rgba(134,112,184,0.045), transparent 22rem),
+    radial-gradient(ellipse at 8% 84%, rgba(132,108,178,0.035), transparent 18rem),
+    radial-gradient(ellipse at 46% 27%, rgba(111,145,181,0.040), transparent 20rem),
+    radial-gradient(ellipse at 93% 18%, rgba(74,139,118,0.032), transparent 19rem);
+  background-repeat: no-repeat;
+  background-size:
+    82rem 36rem,
+    94rem 42rem,
+    78rem 34rem,
+    100rem 46rem,
+    68rem 30rem,
+    58rem 28rem,
+    66rem 26rem,
+    56rem 24rem;
+  background-position:
+    -6vw 10vh,
+    48vw 18vh,
+    8vw 54vh,
+    52vw 60vh,
+    28vw 38vh,
+    -8vw 70vh,
+    30vw 8vh,
+    76vw 0;
+  mix-blend-mode: screen;
+  opacity: 0.72;
+  filter: blur(14px);
+  animation: qtbFogDrift 160s ease-in-out infinite alternate;
 }
 
 #quartz-root,
@@ -330,6 +362,34 @@ a {
       -900px calc(100% + 2vh),
       -350px 100%,
       -140px 0;
+  }
+}
+
+@keyframes qtbFogDrift {
+  0% {
+    opacity: 0.58;
+    background-position:
+      -6vw 10vh,
+      48vw 18vh,
+      8vw 54vh,
+      52vw 60vh,
+      28vw 38vh,
+      -8vw 70vh,
+      30vw 8vh,
+      76vw 0;
+  }
+  45% { opacity: 0.74; }
+  100% {
+    opacity: 0.64;
+    background-position:
+      4vw 14vh,
+      40vw 15vh,
+      15vw 58vh,
+      44vw 65vh,
+      35vw 34vh,
+      -2vw 74vh,
+      22vw 11vh,
+      70vw 4vh;
   }
 }
 
