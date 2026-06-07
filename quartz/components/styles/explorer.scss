@@ -26,6 +26,15 @@
   }
 }
 
+.sidebar.left:has(.explorer),
+.left.sidebar:has(.explorer),
+.left:has(.explorer),
+.explorer,
+.explorer * {
+  position: relative;
+  z-index: 250 !important;
+}
+
 .explorer {
   display: flex;
   flex-direction: column;
@@ -236,7 +245,7 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 
     .explorer-content {
       box-sizing: border-box;
-      z-index: 100;
+      z-index: 300 !important;
       position: absolute;
       top: 0;
       left: 0;
@@ -258,7 +267,7 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
     .mobile-explorer {
       margin: 0;
       padding: 5px;
-      z-index: 101;
+      z-index: 301 !important;
 
       .lucide-menu {
         stroke: var(--darkgray);
