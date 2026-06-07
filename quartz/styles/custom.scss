@@ -304,6 +304,16 @@ a {
   background-clip: text;
 }
 
+/* Strongest visible top-gutter rule: applied to actual columns/widgets, not frame wrappers. */
+body .left,
+body .left.sidebar,
+body .center,
+body main,
+body .right,
+body .right.sidebar {
+  margin-top: var(--qtb-top-pad) !important;
+}
+
 @keyframes qtbStarPulse {
   0%, 100% { opacity: 0.34; }
   45% { opacity: 0.52; }
