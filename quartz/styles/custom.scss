@@ -37,26 +37,26 @@ body::before {
   pointer-events: none;
   background-image:
     url("./static/trees-row-front.svg"),
-    radial-gradient(ellipse at 28% 66%, rgba(132,118,168,0.14), transparent 26rem),
-    radial-gradient(ellipse at 78% 70%, rgba(160,150,190,0.10), transparent 24rem),
+    radial-gradient(ellipse at 28% 66%, rgba(155,120,210,0.24), transparent 22rem),
+    radial-gradient(ellipse at 78% 70%, rgba(170,145,225,0.18), transparent 22rem),
     url("./static/trees-row-mid.svg"),
-    radial-gradient(ellipse at 22% 58%, rgba(110,155,130,0.13), transparent 30rem),
-    radial-gradient(ellipse at 70% 60%, rgba(118,170,140,0.11), transparent 32rem),
+    radial-gradient(ellipse at 22% 58%, rgba(95,190,130,0.23), transparent 26rem),
+    radial-gradient(ellipse at 70% 60%, rgba(105,210,150,0.18), transparent 28rem),
     url("./static/trees-row-far.svg"),
-    radial-gradient(ellipse at 48% 46%, rgba(170,198,218,0.12), transparent 42rem),
-    linear-gradient(to right, transparent 0%, rgba(170,198,218,0.07) 24%, transparent 48%, rgba(170,198,218,0.055) 74%, transparent 100%),
+    radial-gradient(ellipse at 48% 46%, rgba(135,190,235,0.22), transparent 34rem),
+    linear-gradient(to right, transparent 0%, rgba(125,190,235,0.16) 24%, transparent 48%, rgba(145,205,240,0.13) 74%, transparent 100%),
     url("./static/stars-twinkle.svg");
   background-repeat: repeat-x, no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, repeat;
   background-size:
     1600px 760px,
-    900px 260px,
-    780px 220px,
+    780px 250px,
+    720px 220px,
     1800px 700px,
-    950px 250px,
-    1100px 280px,
+    850px 260px,
+    980px 280px,
     1900px 560px,
-    1400px 360px,
-    100% 18%,
+    1200px 360px,
+    100% 20%,
     1400px 900px;
   background-position:
     0 calc(100% + 24vh),
@@ -80,7 +80,7 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(to top, rgba(2,4,3,0.36), transparent 24%);
+  background: linear-gradient(to top, rgba(2,4,3,0.32), transparent 24%);
 }
 
 #quartz-root,
@@ -337,7 +337,7 @@ a {
 
 @keyframes qtbLayeredParallax {
   0% {
-    opacity: 0.82;
+    opacity: 0.88;
     background-position:
       0 calc(100% + 24vh),
       8vw 66vh,
@@ -351,9 +351,9 @@ a {
       0 0;
   }
   38% { opacity: 1; }
-  65% { opacity: 0.78; }
+  65% { opacity: 0.86; }
   100% {
-    opacity: 0.88;
+    opacity: 0.93;
     background-position:
       -1600px calc(100% + 24vh),
       58vw 65vh,
