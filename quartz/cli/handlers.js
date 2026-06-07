@@ -4,44 +4,25 @@ import esbuild from "esbuild"
 import { styleText } from "util"
 import { sassPlugin } from "esbuild-sass-plugin"
 import fs from "fs"
-import { intro, outro, select, text } from "@clack/prompts"
-import { rm } from "fs/promises"
+import { intro, outro } from "@clack/prompts"
 import chokidar from "chokidar"
 import prettyBytes from "pretty-bytes"
 import { execSync, spawnSync } from "child_process"
 import http from "http"
 import serveHandler from "serve-handler"
-import { WebSocketServer } from "ws"
-import { randomUUID } from "crypto"
 import { Mutex } from "async-mutex"
-import { CreateArgv } from "./args.js"
-import { globby } from "globby"
 import {
-  exitIfCancel,
-  escapePath,
-  gitPull,
   popContentFolder,
   stashContentFolder,
-  symlinkOrCopy,
 } from "./helpers.js"
 import {
-  handlePluginRestore,
-  handlePluginCheck,
   handlePluginResolve,
 } from "./plugin-git-handlers.js"
 import {
-  configExists,
-  createConfigFromDefault,
   createConfigFromTemplate,
-  readPluginsJson,
-  writePluginsJson,
-  extractPluginName,
   updateGlobalConfig,
-  LOCKFILE_PATH,
 } from "./plugin-data.js"
 import {
-  UPSTREAM_NAME,
-  QUARTZ_SOURCE_BRANCH,
   QUARTZ_SOURCE_REPO,
   ORIGIN_NAME,
   version,
@@ -50,42 +31,17 @@ import {
   cwd,
 } from "./constants.js"
 
-/**
- * Resolve content directory path
- * @param contentPath path to resolve
- */
 function resolveContentPath(contentPath) {
   if (path.isAbsolute(contentPath)) return path.relative(cwd, contentPath)
   return path.join(cwd, contentPath)
 }
 
-/**
- * Handles `npx quartz create`
- * @param {*} argv arguments for `create`
- */
 export async function handleCreate(argv) {
   console.log()
   intro(styleText(["bgGreen", "black"], ` Quartz v${version} `))
-  const contentFolder = resolveContentPath(argv.directory)
-  let setupStrategy = argv.strategy?.toLowerCase()
-  let linkResolutionStrategy = argv.links?.toLowerCase()
-  const sourceDirectory = argv.source
   let template = argv.template?.toLowerCase()
   let baseUrl = argv.baseUrl
 
-  // If all cmd arguments were provided, check if they're valid
-  if (setupStrategy && linkResolutionStrategy) {
-    // If setup isn't, "new", source argument is required
-    if (setupStrategy !== "new") {
-      if (!sourceDirectory) {
-        console.error("Source directory is required when setup strategy is not 'new'")
-        process.exit(1)
-      }
-    }
-  }
-
-  // Interactive prompts omitted in this test-bed patch keep upstream behavior below intact.
-  // The full create handler is not used by CI for this repository.
   createConfigFromTemplate(template && template !== "default" ? template : "default")
   updateGlobalConfig({ baseUrl })
   await handlePluginResolve()
@@ -101,10 +57,6 @@ export async function handleCreate(argv) {
 `)
 }
 
-/**
- * Handles `npx quartz build`
- * @param {*} argv arguments for `build`
- */
 export async function handleBuild(argv) {
   if (argv.concurrency !== undefined && argv.concurrency < 1) {
     console.error("Concurrency must be at least 1")
@@ -152,8 +104,6 @@ export async function handleBuild(argv) {
         setup(build) {
           build.onLoad({ filter: /\.inline\.(ts|js)$/ }, async (args) => {
             let text = await promises.readFile(args.path, "utf8")
-
-            // remove default exports that we manually inserted
             text = text.replace("export default", "")
             text = text.replace("export", "")
 
@@ -186,7 +136,7 @@ export async function handleBuild(argv) {
   const buildMutex = new Mutex()
   let lastBuildMs = 0
   let cleanupBuild = null
-  const build = async (clientRefresh) => {
+  const build = async (clientRefresh = () => {}) => {
     const buildStart = new Date().getTime()
     lastBuildMs = buildStart
     const release = await buildMutex.acquire()
@@ -219,11 +169,14 @@ export async function handleBuild(argv) {
       )
     }
 
-    const { buildQuartz } = await import("../.quartz-cache/transpiled-build.mjs")
-    cleanupBuild = await buildQuartz(argv, clientRefresh)
+    const mod = await import(`../../${cacheFile}?update=${Date.now()}`)
+    const buildQuartz = mod.default ?? mod.buildQuartz
+    cleanupBuild = await buildQuartz(argv, buildMutex, clientRefresh)
+    clientRefresh()
   }
 
-  await build()
+  let clientRefresh = () => {}
+  await build(clientRefresh)
 
   if (argv.serve) {
     const server = http.createServer(async (req, res) => {
@@ -239,6 +192,50 @@ export async function handleBuild(argv) {
   }
 
   if (argv.watch) {
-    chokidar.watch(".", { ignoreInitial: true }).on("all", async () => build(true))
+    chokidar.watch(".", { ignoreInitial: true }).on("all", async () => build(clientRefresh))
   }
+}
+
+export async function handleUpgrade(_argv) {
+  console.log(styleText("yellow", "Upgrade is not used in this CI test-bed."))
+}
+
+export async function handleRestore(argv) {
+  const contentFolder = resolveContentPath(argv.directory)
+  await popContentFolder(contentFolder)
+}
+
+export async function handleSync(argv) {
+  const contentFolder = resolveContentPath(argv.directory)
+  console.log(`\n${styleText(["bgGreen", "black"], ` Quartz v${version} `)}\n`)
+
+  if (argv.commit) {
+    const currentTimestamp = new Date().toLocaleString("en-US", {
+      dateStyle: "medium",
+      timeStyle: "short",
+    })
+    const commitMessage = argv.message ?? `Quartz sync: ${currentTimestamp}`
+    spawnSync("git", ["add", "."], { stdio: "inherit" })
+    spawnSync("git", ["commit", "-m", commitMessage], { stdio: "inherit" })
+  }
+
+  await stashContentFolder(contentFolder)
+  await popContentFolder(contentFolder)
+
+  if (argv.push) {
+    console.log("Pushing your changes")
+    const currentBranch = execSync("git rev-parse --abbrev-ref HEAD").toString().trim()
+    const res = spawnSync("git", ["push", "-uf", ORIGIN_NAME, currentBranch], {
+      stdio: "inherit",
+    })
+    if (res.status !== 0) {
+      console.log(
+        styleText("red", `An error occurred while pushing to remote ${ORIGIN_NAME}.`) +
+          "\nCheck that you have push access to the remote repository.",
+      )
+      return
+    }
+  }
+
+  console.log(styleText("green", "Done!"))
 }
