@@ -9,4 +9,5 @@ body::before {
     url("/quartz-test-bed/static/stars-twinkle.svg") !important;
   background-repeat: repeat-x !important;
   background-size: 1600px 760px, 1700px 90vh, 1800px 700px, 1900px 80vh, 1900px 560px, 2200px 75vh, 1400px 900px !important;
+  background-position: 0 calc(100% + 24vh), -12vw 10vh, 0 calc(100% + 2vh), 8vw 14vh, 0 100%, -18vw 8vh, 0 0 !important;
 }
