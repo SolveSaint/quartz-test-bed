@@ -10,10 +10,12 @@
 
 html,
 body {
+  min-height: 100%;
   background-color: var(--qtb-bg) !important;
 }
 
 body {
+  position: relative;
   color: var(--qtb-text);
   background-image:
     radial-gradient(ellipse at 18% 58%, rgba(27,118,82,0.18), transparent 22rem),
@@ -49,7 +51,7 @@ html::before {
   top: 58%;
   width: clamp(220px, 22vw, 440px);
   height: clamp(52px, 6vw, 100px);
-  z-index: 2;
+  z-index: 3;
   background-image: url("../static/roaming-animal.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -62,7 +64,7 @@ html::before {
 .qtb-bg-layers {
   position: fixed;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   overflow: hidden;
 }
@@ -82,18 +84,34 @@ html::before {
   z-index: 1;
   height: 64vh;
   background-image: url("../static/trees-far.svg");
-  background-size: 2200px 800px;
-  opacity: 0.45;
+  background-size: 2200px 820px;
+  opacity: 0.72;
   animation: qtbFarTreesScroll 260s linear infinite;
 }
 
 .qtb-bg-trees-near {
   z-index: 2;
-  height: 74vh;
+  height: 78vh;
   background-image: url("../static/trees-near.svg");
-  background-size: 1600px 900px;
-  opacity: 0.65;
+  background-size: 1600px 940px;
+  opacity: 0.88;
   animation: qtbNearTreesScroll 120s linear infinite;
+}
+
+#quartz-root,
+#quartz-body,
+.page,
+.page[data-frame],
+.page[data-frame="default"],
+.page > #quartz-body,
+.left,
+.right,
+.center,
+main,
+article,
+footer {
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 #quartz-root,
@@ -104,12 +122,12 @@ html::before {
 article,
 footer {
   position: relative;
-  z-index: 3;
+  z-index: 10;
 }
 
 .center article > :not(.qtb-bg-layers) {
   position: relative;
-  z-index: 4;
+  z-index: 12;
 }
 
 #quartz-root,
