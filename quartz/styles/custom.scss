@@ -59,14 +59,14 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(ellipse at 14% 34%, rgba(107,132,166,0.075), transparent 24rem),
-    radial-gradient(ellipse at 82% 42%, rgba(96,124,158,0.055), transparent 28rem),
-    radial-gradient(ellipse at 31% 72%, rgba(65,142,116,0.070), transparent 25rem),
-    radial-gradient(ellipse at 76% 76%, rgba(66,154,121,0.050), transparent 31rem),
-    radial-gradient(ellipse at 54% 58%, rgba(134,112,184,0.045), transparent 22rem),
-    radial-gradient(ellipse at 8% 84%, rgba(132,108,178,0.035), transparent 18rem),
-    radial-gradient(ellipse at 46% 27%, rgba(111,145,181,0.040), transparent 20rem),
-    radial-gradient(ellipse at 93% 18%, rgba(74,139,118,0.032), transparent 19rem);
+    radial-gradient(ellipse at 14% 34%, rgba(107,132,166,0.18), transparent 24rem),
+    radial-gradient(ellipse at 82% 42%, rgba(96,124,158,0.14), transparent 28rem),
+    radial-gradient(ellipse at 31% 72%, rgba(65,142,116,0.16), transparent 25rem),
+    radial-gradient(ellipse at 76% 76%, rgba(66,154,121,0.12), transparent 31rem),
+    radial-gradient(ellipse at 54% 58%, rgba(134,112,184,0.11), transparent 22rem),
+    radial-gradient(ellipse at 8% 84%, rgba(132,108,178,0.09), transparent 18rem),
+    radial-gradient(ellipse at 46% 27%, rgba(111,145,181,0.12), transparent 20rem),
+    radial-gradient(ellipse at 93% 18%, rgba(74,139,118,0.10), transparent 19rem);
   background-repeat: no-repeat;
   background-size:
     82rem 36rem,
@@ -87,8 +87,8 @@ body::after {
     30vw 8vh,
     76vw 0;
   mix-blend-mode: screen;
-  opacity: 0.72;
-  filter: blur(14px);
+  opacity: 0.95;
+  filter: blur(8px);
   animation: qtbFogDrift 160s ease-in-out infinite alternate;
 }
 
