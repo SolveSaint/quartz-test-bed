@@ -16,6 +16,17 @@ const FogShapeStyles: QuartzComponent = () => {
           radial-gradient(ellipse at 48% 46%, rgba(135,190,235,0.20), transparent 34rem),
           url("/quartz-test-bed/static/stars-twinkle.svg") !important;
         background-repeat: repeat-x, repeat-x, no-repeat, repeat-x, repeat-x, no-repeat, repeat-x, repeat-x, no-repeat, repeat !important;
+        background-size:
+          1600px 760px,
+          1700px 320px,
+          720px 220px,
+          1800px 700px,
+          1900px 280px,
+          980px 280px,
+          1900px 560px,
+          2200px 260px,
+          1200px 360px,
+          1400px 900px !important;
       }
     `}</style>
   )
