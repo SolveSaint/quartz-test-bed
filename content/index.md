@@ -2,6 +2,21 @@
 title: Quartz Test Bed
 ---
 
+<div class="qtb-firefly-layer" aria-hidden="true">
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+  <span class="qtb-firefly"></span>
+</div>
+
 <div class="qtb-hero" role="img" aria-label="Quartz Test Bed forest banner">
   <div class="qtb-hero-inner">
     <div class="qtb-hero-title">Quartz Test Bed</div>
