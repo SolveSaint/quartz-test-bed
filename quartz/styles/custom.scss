@@ -28,7 +28,7 @@ body {
   background-attachment: fixed;
 }
 
-/* Unified decorative background layer: stars, trees, fireflies, and future objects. */
+/* Slow decorative tree/star layer. */
 body::before {
   content: "";
   position: fixed;
@@ -36,17 +36,13 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(circle, rgba(255,252,205,0.95) 0 2px, rgba(255,232,118,0.32) 3px, transparent 7px),
-    radial-gradient(circle, rgba(255,252,205,0.85) 0 2px, rgba(255,232,118,0.28) 3px, transparent 7px),
-    radial-gradient(circle, rgba(255,252,205,0.9) 0 2px, rgba(255,232,118,0.3) 3px, transparent 7px),
     url("./static/trees-row-front.svg"),
     url("./static/trees-row-mid.svg"),
     url("./static/trees-row-far.svg"),
     url("./static/stars-twinkle.svg");
-  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat-x, repeat;
-  background-size: 12px 12px, 10px 10px, 14px 14px, 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px;
-  background-position: 11vw 52vh, 39vw 70vh, 76vw 43vh, 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
-  filter: drop-shadow(0 0 8px rgba(255,235,140,0.45));
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat;
+  background-size: 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px;
+  background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
   animation: qtbUnifiedBackground 240s linear infinite;
 }
 
@@ -305,13 +301,10 @@ a {
 
 @keyframes qtbUnifiedBackground {
   from {
-    background-position: 11vw 52vh, 39vw 70vh, 76vw 43vh, 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
-  }
-  45% {
-    opacity: 1;
+    background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
   }
   to {
-    background-position: 15vw 49vh, 42vw 66vh, 73vw 47vh, -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%, -140px 0;
+    background-position: -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%, -140px 0;
   }
 }
 
