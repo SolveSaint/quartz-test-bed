@@ -15,6 +15,7 @@ const FogShapeStyles: QuartzComponent = () => {
           url("/quartz-test-bed/static/fog-wisps-far.svg"),
           radial-gradient(ellipse at 48% 46%, rgba(135,190,235,0.20), transparent 34rem),
           url("/quartz-test-bed/static/stars-twinkle.svg") !important;
+        background-repeat: repeat-x, repeat-x, no-repeat, repeat-x, repeat-x, no-repeat, repeat-x, repeat-x, no-repeat, repeat !important;
       }
     `}</style>
   )
