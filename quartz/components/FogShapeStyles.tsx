@@ -27,6 +27,17 @@ const FogShapeStyles: QuartzComponent = () => {
           2200px 260px,
           1200px 360px,
           1400px 900px !important;
+        background-position:
+          0 calc(100% + 24vh),
+          -12vw 62vh,
+          70vw 70vh,
+          0 calc(100% + 2vh),
+          8vw 55vh,
+          62vw 60vh,
+          0 100%,
+          -18vw 47vh,
+          20vw 46vh,
+          0 0 !important;
       }
     `}</style>
   )
