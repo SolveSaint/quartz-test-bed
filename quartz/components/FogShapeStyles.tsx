@@ -38,6 +38,7 @@ const FogShapeStyles: QuartzComponent = () => {
           -18vw 47vh,
           20vw 46vh,
           0 0 !important;
+        animation-name: qtbLayeredParallax;
       }
     `}</style>
   )
