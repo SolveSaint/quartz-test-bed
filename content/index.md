@@ -2,6 +2,40 @@
 title: Quartz Test Bed
 ---
 
+<style>
+  body .left,
+  body .left.sidebar,
+  body .right,
+  body .right.sidebar,
+  body .center,
+  body main,
+  body article,
+  body footer {
+    position: relative !important;
+    z-index: 50 !important;
+  }
+
+  body .left.sidebar > *,
+  body .left > *,
+  body .right.sidebar > *,
+  body .right > *,
+  body .center > *,
+  body main > *,
+  body article > *,
+  body footer > * {
+    position: relative !important;
+    z-index: 60 !important;
+  }
+
+  .qtb-forest-layers {
+    z-index: 1 !important;
+  }
+
+  .qtb-firefly-layer {
+    z-index: 2 !important;
+  }
+</style>
+
 <div class="qtb-forest-layers" aria-hidden="true">
   <span class="qtb-forest qtb-forest-far"></span>
   <span class="qtb-forest qtb-forest-mid"></span>
