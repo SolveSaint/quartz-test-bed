@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" preserveAspectRatio="none">
   <rect width="1600" height="760" fill="none"/>
 
-  <g opacity="0.96">
+  <g>
     <rect x="36" y="470" width="30" height="290" fill="#020b07"/>
     <polygon fill="#0f3f2b" points="51,155 -34,430 136,430"/>
     <polygon fill="#0b2f20" points="51,265 -18,545 120,545"/>
@@ -43,7 +43,7 @@
     <polygon fill="#061c13" points="1544,428 1494,704 1594,704"/>
   </g>
 
-  <g opacity="0.82">
+  <g>
     <rect x="118" y="540" width="22" height="220" fill="#020b07"/>
     <polygon fill="#0b2e20" points="129,270 48,518 210,518"/>
     <polygon fill="#082518" points="129,382 68,636 190,636"/>
