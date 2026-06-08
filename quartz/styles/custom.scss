@@ -309,7 +309,7 @@ a { color: var(--qtb-blue); }
   0% { opacity: 0.88; background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0; }
   38% { opacity: 1; }
   65% { opacity: 0.86; }
-  100% { opacity: 0.93; background-position: -1600px calc(100% + 24vh), -900px calc(100% + 2vh), -350px 100%, -140px 0; }
+  100% { opacity: 0.93; background-position: -1600px calc(100% + 24vh), -1800px calc(100% + 2vh), -1900px 100%, -1400px 0; }
 }
 
 @keyframes qtbFogDrift {
