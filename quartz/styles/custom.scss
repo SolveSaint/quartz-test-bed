@@ -290,14 +290,8 @@ article table {
 }
 
 article p,
-article li {
-  color: #e8eee9;
-}
-
-article hr {
-  border-color: rgba(255,255,255,0.18);
-}
-
+article li { color: #e8eee9; }
+article hr { border-color: rgba(255,255,255,0.18); }
 footer { color: var(--qtb-muted); }
 footer a,
 a { color: var(--qtb-blue); }
@@ -327,10 +321,12 @@ a { color: var(--qtb-blue); }
 @media (prefers-reduced-motion: reduce) {
   body::before,
   body::after,
-  #quartz-root::before { animation: none !important; }
+  #quartz-root::before,
+  #quartz-root::after { animation: none !important; }
 }
 
-#quartz-root::before {
+#quartz-root::before,
+#quartz-root::after {
   content: "";
   position: fixed;
   top: 0;
@@ -341,32 +337,29 @@ a { color: var(--qtb-blue); }
   z-index: 1;
   pointer-events: none;
   background: transparent;
-  animation: qtbFireflyShadowField 28s linear infinite;
 }
 
-@keyframes qtbFireflyShadowField {
-  0%, 100% {
-    box-shadow:
-      20vw 55vh 0 0 rgba(255,215,0,0),
-      34vw 69vh 0 0 rgba(255,215,0,0),
-      51vw 47vh 0 0 rgba(255,215,0,0),
-      67vw 63vh 0 0 rgba(255,215,0,0),
-      83vw 52vh 0 0 rgba(255,215,0,0),
-      27vw 45vh 0 0 rgba(255,215,0,0),
-      73vw 72vh 0 0 rgba(255,215,0,0);
-  }
-  7% { box-shadow: 20vw 55vh 0 3px #ffd400, 20vw 55vh 18px 8px rgba(255,212,0,0.95), 27vw 45vh 0 2px rgba(255,212,0,0.55), 27vw 45vh 10px 5px rgba(255,212,0,0.38); }
-  10% { box-shadow: 20vw 55vh 0 0 rgba(255,215,0,0), 34vw 69vh 0 0 rgba(255,215,0,0), 51vw 47vh 0 0 rgba(255,215,0,0), 67vw 63vh 0 0 rgba(255,215,0,0), 83vw 52vh 0 0 rgba(255,215,0,0), 27vw 45vh 0 0 rgba(255,215,0,0), 73vw 72vh 0 0 rgba(255,215,0,0); }
-  19% { box-shadow: 34vw 69vh 0 3px #ffd400, 34vw 69vh 18px 8px rgba(255,212,0,0.9), 83vw 52vh 0 2px rgba(255,212,0,0.5), 83vw 52vh 10px 5px rgba(255,212,0,0.35); }
-  22% { box-shadow: 20vw 55vh 0 0 rgba(255,215,0,0), 34vw 69vh 0 0 rgba(255,215,0,0), 51vw 47vh 0 0 rgba(255,215,0,0), 67vw 63vh 0 0 rgba(255,215,0,0), 83vw 52vh 0 0 rgba(255,215,0,0), 27vw 45vh 0 0 rgba(255,215,0,0), 73vw 72vh 0 0 rgba(255,215,0,0); }
-  34% { box-shadow: 51vw 47vh 0 3px #ffd400, 51vw 47vh 18px 8px rgba(255,212,0,0.95), 73vw 72vh 0 2px rgba(255,212,0,0.5), 73vw 72vh 10px 5px rgba(255,212,0,0.35); }
-  37% { box-shadow: 20vw 55vh 0 0 rgba(255,215,0,0), 34vw 69vh 0 0 rgba(255,215,0,0), 51vw 47vh 0 0 rgba(255,215,0,0), 67vw 63vh 0 0 rgba(255,215,0,0), 83vw 52vh 0 0 rgba(255,215,0,0), 27vw 45vh 0 0 rgba(255,215,0,0), 73vw 72vh 0 0 rgba(255,215,0,0); }
-  49% { box-shadow: 67vw 63vh 0 3px #ffd400, 67vw 63vh 18px 8px rgba(255,212,0,0.9), 73vw 72vh 0 2px rgba(255,212,0,0.45), 73vw 72vh 10px 5px rgba(255,212,0,0.32); }
-  52% { box-shadow: 20vw 55vh 0 0 rgba(255,215,0,0), 34vw 69vh 0 0 rgba(255,215,0,0), 51vw 47vh 0 0 rgba(255,215,0,0), 67vw 63vh 0 0 rgba(255,215,0,0), 83vw 52vh 0 0 rgba(255,215,0,0), 27vw 45vh 0 0 rgba(255,215,0,0), 73vw 72vh 0 0 rgba(255,215,0,0); }
-  64% { box-shadow: 83vw 52vh 0 3px #ffd400, 83vw 52vh 18px 8px rgba(255,212,0,0.95), 20vw 55vh 0 2px rgba(255,212,0,0.45), 20vw 55vh 10px 5px rgba(255,212,0,0.32); }
-  67% { box-shadow: 20vw 55vh 0 0 rgba(255,215,0,0), 34vw 69vh 0 0 rgba(255,215,0,0), 51vw 47vh 0 0 rgba(255,215,0,0), 67vw 63vh 0 0 rgba(255,215,0,0), 83vw 52vh 0 0 rgba(255,215,0,0), 27vw 45vh 0 0 rgba(255,215,0,0), 73vw 72vh 0 0 rgba(255,215,0,0); }
-  78% { box-shadow: 27vw 45vh 0 3px #ffd400, 27vw 45vh 18px 8px rgba(255,212,0,0.9), 34vw 69vh 0 2px rgba(255,212,0,0.45), 34vw 69vh 10px 5px rgba(255,212,0,0.32); }
-  81% { box-shadow: 20vw 55vh 0 0 rgba(255,215,0,0), 34vw 69vh 0 0 rgba(255,215,0,0), 51vw 47vh 0 0 rgba(255,215,0,0), 67vw 63vh 0 0 rgba(255,215,0,0), 83vw 52vh 0 0 rgba(255,215,0,0), 27vw 45vh 0 0 rgba(255,215,0,0), 73vw 72vh 0 0 rgba(255,215,0,0); }
-  91% { box-shadow: 73vw 72vh 0 3px #ffd400, 73vw 72vh 18px 8px rgba(255,212,0,0.85), 27vw 45vh 0 2px rgba(255,212,0,0.4), 27vw 45vh 10px 5px rgba(255,212,0,0.3); }
-  94% { box-shadow: 20vw 55vh 0 0 rgba(255,215,0,0), 34vw 69vh 0 0 rgba(255,215,0,0), 51vw 47vh 0 0 rgba(255,215,0,0), 67vw 63vh 0 0 rgba(255,215,0,0), 83vw 52vh 0 0 rgba(255,215,0,0), 27vw 45vh 0 0 rgba(255,215,0,0), 73vw 72vh 0 0 rgba(255,215,0,0); }
+#quartz-root::before { animation: qtbFireflyCore 28s linear infinite; }
+#quartz-root::after { animation: qtbFireflyHalo 28s linear infinite; }
+
+@keyframes qtbFireflyCore {
+  0%, 10%, 22%, 37%, 52%, 67%, 81%, 94%, 100% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  7% { box-shadow: 20vw 55vh 0 3px #ffd400, 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 2px rgba(255,212,0,0.65), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  19% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 3px #ffd400, 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 2px rgba(255,212,0,0.6), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  34% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 3px #ffd400, 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 2px rgba(255,212,0,0.6); }
+  49% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 3px #ffd400, 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 2px rgba(255,212,0,0.55); }
+  64% { box-shadow: 20vw 55vh 0 2px rgba(255,212,0,0.55), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 3px #ffd400, 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  78% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 2px rgba(255,212,0,0.55), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 3px #ffd400, 73vw 72vh 0 0 rgba(255,212,0,0); }
+  91% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 2px rgba(255,212,0,0.5), 73vw 72vh 0 3px #ffd400; }
+}
+
+@keyframes qtbFireflyHalo {
+  0%, 10%, 22%, 37%, 52%, 67%, 81%, 94%, 100% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  7% { box-shadow: 20vw 55vh 18px 8px rgba(255,212,0,0.75), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 10px 5px rgba(255,212,0,0.32), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  19% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 18px 8px rgba(255,212,0,0.75), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 10px 5px rgba(255,212,0,0.30), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  34% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 18px 8px rgba(255,212,0,0.75), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 10px 5px rgba(255,212,0,0.30); }
+  49% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 18px 8px rgba(255,212,0,0.75), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 10px 5px rgba(255,212,0,0.28); }
+  64% { box-shadow: 20vw 55vh 10px 5px rgba(255,212,0,0.28), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 18px 8px rgba(255,212,0,0.75), 27vw 45vh 0 0 rgba(255,212,0,0), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  78% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 10px 5px rgba(255,212,0,0.28), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 18px 8px rgba(255,212,0,0.75), 73vw 72vh 0 0 rgba(255,212,0,0); }
+  91% { box-shadow: 20vw 55vh 0 0 rgba(255,212,0,0), 34vw 69vh 0 0 rgba(255,212,0,0), 51vw 47vh 0 0 rgba(255,212,0,0), 67vw 63vh 0 0 rgba(255,212,0,0), 83vw 52vh 0 0 rgba(255,212,0,0), 27vw 45vh 10px 5px rgba(255,212,0,0.25), 73vw 72vh 18px 8px rgba(255,212,0,0.70); }
 }
