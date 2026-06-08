@@ -38,7 +38,6 @@ body::before {
   background-repeat: repeat-x, repeat-x, repeat-x, repeat;
   background-size: 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px;
   background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
-  filter: blur(0.2px);
   animation: qtbLayeredParallax 90s ease-in-out infinite alternate;
 }
 
