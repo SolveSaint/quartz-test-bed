@@ -11,15 +11,6 @@
   </defs>
   <rect width="1600" height="840" fill="none"/>
 
-  <!-- offset paper-cut shadows behind selected crowns -->
-  <g opacity="0.42">
-    <polygon fill="#010503" points="151,202 22,572 280,572"/>
-    <polygon fill="#010503" points="429,94 258,532 600,532"/>
-    <polygon fill="#010503" points="755,177 600,560 910,560"/>
-    <polygon fill="#010503" points="1089,117 920,540 1258,540"/>
-    <polygon fill="#010503" points="1424,162 1278,554 1570,554"/>
-  </g>
-
   <!-- sparse broken snags for ominous paper-forest depth -->
   <g stroke="#010604" stroke-linecap="round" opacity="0.92">
     <path d="M333 840 L346 548 L360 514" stroke-width="14"/>
