@@ -11,10 +11,6 @@
   </defs>
   <rect width="1600" height="840" fill="none"/>
 
-  <!-- very low paper mist, hidden mostly by foreground trunks/crowns -->
-  <path d="M0 770 C140 748 250 790 390 766 C545 740 680 780 820 760 C990 735 1110 785 1280 762 C1420 742 1515 760 1600 748 L1600 840 L0 840 Z" fill="#173728" opacity="0.18"/>
-  <path d="M0 804 C180 790 290 814 460 798 C640 780 780 812 960 794 C1140 776 1300 812 1600 786 L1600 840 L0 840 Z" fill="#06100c" opacity="0.38"/>
-
   <!-- sparse broken snags for ominous paper-forest depth -->
   <g stroke="#010604" stroke-linecap="round" opacity="0.92">
     <path d="M333 840 L346 548 L360 514" stroke-width="14"/>
@@ -33,53 +29,53 @@
 
   <g>
     <rect x="118" y="560" width="38" height="280" fill="#010805"/>
-    <polygon fill="#092c1e" points="137,190 8,560 72,552 92,520 132,560 266,560 214,512 226,468 180,478"/>
-    <polygon fill="url(#needles-front)" opacity="0.48" points="137,190 8,560 72,552 92,520 132,560 266,560 214,512 226,468 180,478"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.44" points="137,190 8,560 72,552 92,520 132,560 266,560 214,512 226,468 180,478"/>
+    <polygon fill="#092c1e" points="137,190 8,560 266,560"/>
+    <polygon fill="url(#needles-front)" opacity="0.48" points="137,190 8,560 266,560"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.44" points="137,190 8,560 266,560"/>
     <polyline points="137,190 8,560" fill="none" stroke="#214f3d" stroke-width="2" opacity="0.18"/>
 
     <rect x="250" y="582" width="30" height="258" fill="#010805"/>
-    <polygon fill="#0a3020" points="265,315 158,582 226,570 238,540 274,582 372,582 334,548 342,512 306,522"/>
-    <polygon fill="url(#needles-front)" opacity="0.40" points="265,315 158,582 226,570 238,540 274,582 372,582 334,548 342,512 306,522"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.36" points="265,315 158,582 226,570 238,540 274,582 372,582 334,548 342,512 306,522"/>
+    <polygon fill="#0a3020" points="265,315 158,582 372,582"/>
+    <polygon fill="url(#needles-front)" opacity="0.40" points="265,315 158,582 372,582"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.36" points="265,315 158,582 372,582"/>
 
     <rect x="392" y="520" width="46" height="320" fill="#010805"/>
-    <polygon fill="#0b3624" points="415,82 244,520 308,512 332,470 382,520 586,520 526,468 540,420 488,432"/>
-    <polygon fill="url(#needles-front)" opacity="0.50" points="415,82 244,520 308,512 332,470 382,520 586,520 526,468 540,420 488,432"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.46" points="415,82 244,520 308,512 332,470 382,520 586,520 526,468 540,420 488,432"/>
+    <polygon fill="#0b3624" points="415,82 244,520 586,520"/>
+    <polygon fill="url(#needles-front)" opacity="0.50" points="415,82 244,520 586,520"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.46" points="415,82 244,520 586,520"/>
     <polyline points="415,82 244,520" fill="none" stroke="#28624a" stroke-width="2.5" opacity="0.18"/>
 
     <rect x="586" y="590" width="32" height="250" fill="#010805"/>
-    <polygon fill="#092d1f" points="602,338 492,590 556,578 570,548 608,590 712,590 672,552 680,520 642,528"/>
-    <polygon fill="url(#needles-front)" opacity="0.38" points="602,338 492,590 556,578 570,548 608,590 712,590 672,552 680,520 642,528"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.34" points="602,338 492,590 556,578 570,548 608,590 712,590 672,552 680,520 642,528"/>
+    <polygon fill="#092d1f" points="602,338 492,590 712,590"/>
+    <polygon fill="url(#needles-front)" opacity="0.38" points="602,338 492,590 712,590"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.34" points="602,338 492,590 712,590"/>
 
     <rect x="720" y="548" width="42" height="292" fill="#010805"/>
-    <polygon fill="#0a3322" points="741,165 586,548 650,540 674,500 724,548 896,548 846,502 858,458 810,468"/>
-    <polygon fill="url(#needles-front)" opacity="0.48" points="741,165 586,548 650,540 674,500 724,548 896,548 846,502 858,458 810,468"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.44" points="741,165 586,548 650,540 674,500 724,548 896,548 846,502 858,458 810,468"/>
+    <polygon fill="#0a3322" points="741,165 586,548 896,548"/>
+    <polygon fill="url(#needles-front)" opacity="0.48" points="741,165 586,548 896,548"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.44" points="741,165 586,548 896,548"/>
     <polyline points="896,548 741,165" fill="none" stroke="#1f5a43" stroke-width="2" opacity="0.16"/>
 
     <rect x="902" y="582" width="34" height="258" fill="#010805"/>
-    <polygon fill="#0b3624" points="919,275 792,582 860,572 876,536 922,582 1046,582 1002,542 1012,506 970,516"/>
-    <polygon fill="url(#needles-front)" opacity="0.42" points="919,275 792,582 860,572 876,536 922,582 1046,582 1002,542 1012,506 970,516"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.38" points="919,275 792,582 860,572 876,536 922,582 1046,582 1002,542 1012,506 970,516"/>
+    <polygon fill="#0b3624" points="919,275 792,582 1046,582"/>
+    <polygon fill="url(#needles-front)" opacity="0.42" points="919,275 792,582 1046,582"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.38" points="919,275 792,582 1046,582"/>
 
     <rect x="1052" y="528" width="46" height="312" fill="#010805"/>
-    <polygon fill="#092c1e" points="1075,105 906,528 970,520 994,476 1048,528 1244,528 1186,478 1200,430 1148,440"/>
-    <polygon fill="url(#needles-front)" opacity="0.50" points="1075,105 906,528 970,520 994,476 1048,528 1244,528 1186,478 1200,430 1148,440"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.46" points="1075,105 906,528 970,520 994,476 1048,528 1244,528 1186,478 1200,430 1148,440"/>
+    <polygon fill="#092c1e" points="1075,105 906,528 1244,528"/>
+    <polygon fill="url(#needles-front)" opacity="0.50" points="1075,105 906,528 1244,528"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.46" points="1075,105 906,528 1244,528"/>
     <polyline points="1244,528 1075,105" fill="none" stroke="#245a43" stroke-width="2.5" opacity="0.17"/>
 
     <rect x="1238" y="590" width="32" height="250" fill="#010805"/>
-    <polygon fill="#0a3121" points="1254,325 1138,590 1200,580 1218,548 1260,590 1370,590 1332,554 1340,520 1302,528"/>
-    <polygon fill="url(#needles-front)" opacity="0.40" points="1254,325 1138,590 1200,580 1218,548 1260,590 1370,590 1332,554 1340,520 1302,528"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.34" points="1254,325 1138,590 1200,580 1218,548 1260,590 1370,590 1332,554 1340,520 1302,528"/>
+    <polygon fill="#0a3121" points="1254,325 1138,590 1370,590"/>
+    <polygon fill="url(#needles-front)" opacity="0.40" points="1254,325 1138,590 1370,590"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.34" points="1254,325 1138,590 1370,590"/>
 
     <rect x="1390" y="542" width="40" height="298" fill="#010805"/>
-    <polygon fill="#0b3423" points="1410,150 1264,542 1328,534 1350,494 1398,542 1556,542 1508,498 1520,454 1474,464"/>
-    <polygon fill="url(#needles-front)" opacity="0.48" points="1410,150 1264,542 1328,534 1350,494 1398,542 1556,542 1508,498 1520,454 1474,464"/>
-    <polygon fill="url(#branch-shadow-front)" opacity="0.44" points="1410,150 1264,542 1328,534 1350,494 1398,542 1556,542 1508,498 1520,454 1474,464"/>
+    <polygon fill="#0b3423" points="1410,150 1264,542 1556,542"/>
+    <polygon fill="url(#needles-front)" opacity="0.48" points="1410,150 1264,542 1556,542"/>
+    <polygon fill="url(#branch-shadow-front)" opacity="0.44" points="1410,150 1264,542 1556,542"/>
     <polyline points="1410,150 1264,542" fill="none" stroke="#265e47" stroke-width="2" opacity="0.18"/>
   </g>
 </svg>
