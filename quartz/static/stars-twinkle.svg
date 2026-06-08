@@ -1,15 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
   <rect width="1400" height="900" fill="transparent"/>
 
-  <!-- faint sky haze near the top to help density read -->
   <defs>
     <radialGradient id="hazeTop" cx="50%" cy="0%" r="75%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.05"/>
       <stop offset="55%" stop-color="#ffffff" stop-opacity="0.02"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
+
+    <linearGradient id="moonRay" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d7e7ff" stop-opacity="0"/>
+      <stop offset="42%" stop-color="#d7e7ff" stop-opacity="0.07"/>
+      <stop offset="55%" stop-color="#e7f1ff" stop-opacity="0.13"/>
+      <stop offset="68%" stop-color="#d7e7ff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#d7e7ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="greenRay" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b5ffd8" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#b5ffd8" stop-opacity="0.045"/>
+      <stop offset="58%" stop-color="#d6ffee" stop-opacity="0.095"/>
+      <stop offset="72%" stop-color="#b5ffd8" stop-opacity="0.035"/>
+      <stop offset="100%" stop-color="#b5ffd8" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="rayBlur">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
   </defs>
+
   <rect width="1400" height="900" fill="url(#hazeTop)"/>
+
+  <!-- intermittent angled moon shafts; intentionally soft and rare -->
+  <g filter="url(#rayBlur)" style="mix-blend-mode:screen">
+    <g opacity="0">
+      <polygon points="965,-40 1095,-40 820,900 610,900" fill="url(#moonRay)"/>
+      <animate attributeName="opacity" dur="38s" repeatCount="indefinite" values="0;0;0.42;0.24;0;0" keyTimes="0;0.18;0.32;0.48;0.62;1"/>
+    </g>
+    <g opacity="0">
+      <polygon points="1210,-50 1325,-50 1095,900 910,900" fill="url(#greenRay)"/>
+      <animate attributeName="opacity" dur="53s" repeatCount="indefinite" values="0;0;0.34;0.18;0;0" keyTimes="0;0.36;0.50;0.66;0.78;1"/>
+    </g>
+    <g opacity="0">
+      <polygon points="360,-45 470,-45 245,900 70,900" fill="url(#moonRay)"/>
+      <animate attributeName="opacity" dur="47s" repeatCount="indefinite" values="0;0;0.30;0.16;0;0" keyTimes="0;0.52;0.64;0.76;0.88;1"/>
+    </g>
+  </g>
 
   <!-- TOP BAND: dense small stars (y 0 to 320) -->
   <g fill="#ffffff" opacity="0.9">
