@@ -39,7 +39,7 @@ body::before {
   background-size: 1600px 760px, 1800px 700px, 1900px 560px, 1400px 900px;
   background-position: 0 calc(100% + 24vh), 0 calc(100% + 2vh), 0 100%, 0 0;
   filter: blur(0.2px);
-  animation: qtbLayeredParallax 300s ease-in-out infinite alternate;
+  animation: qtbLayeredParallax 150s ease-in-out infinite alternate;
 }
 
 body::after {
@@ -313,7 +313,7 @@ a { color: var(--qtb-blue); }
   50% { opacity: 1; }
   100% {
     opacity: 0.93;
-    background-position: -320px calc(100% + 24vh), -220px calc(100% + 2vh), -120px 100%, -70px 0;
+    background-position: -520px calc(100% + 24vh), -380px calc(100% + 2vh), -220px 100%, -110px 0;
   }
 }
 
